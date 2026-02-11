@@ -5,6 +5,18 @@
 from fisotec_basedatos import FisotecBaseDatos
 from fisotec_utils import FisotecUtils
 
+def obtener_nombre_esquema(proyecto, modulo):
+    """
+    Devuelve el nombre del esquema dependiendo del proyecto y modulo
+    """
+
+    if modulo == 9:
+        return proyecto + '_gissmart_water'
+    elif modulo == 6:
+        return proyecto + '_gissmart_energy'
+    elif modulo == 11:
+        return proyecto + '_giahsa'
+
 print("Inicio de algoritmo")
 
 # Conectamos la base de datos
@@ -15,8 +27,8 @@ modulo = 9
 
 # Datos extraccion
 usuario = 'jsanchez'
-fecha_inicio = '1990-01-01' # Adaptar a codificacion
-fecha_final = '2020-12-31' # Adaptar a codificacion
+fecha_inicio = '2026-02-02' # Adaptar a codificacion
+fecha_final = '2026-02-06' # Adaptar a codificacion
 
 # Obtenemos los proyecto
 consulta_proyectos = u"""
@@ -38,9 +50,14 @@ consulta_proyectos = u"""
 
 resultado_consulta_proyectos = FisotecBaseDatos.consultaSQL(conexion, consulta_proyectos)
 
+# Recorremos los proyectos
 for proyecto in resultado_consulta_proyectos:
     print("Proyecto: {PROYECTO}".format(PROYECTO=proyecto['nombre']))
-    print(proyecto)
+
+    # Definimos el nombre del proyecto dependiendo del modulo
+    nombre_proyecto = obtener_nombre_esquema(proyecto['nombre_formateado'], modulo)
+
+    print(nombre_proyecto)
 
     # Aquí ira todo
 
