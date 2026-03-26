@@ -1,0 +1,428 @@
+RESUMEN DE CLASES - DISTRIBUCIÓN PROPORCIONAL
+============================================================
+
+Clase: BCV  (total: 837 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 1.00 - 17.00
+  lejos    :   13 imágenes  |  altura: 23.00 - 30.00
+  medio    :   12 imágenes  |  altura: 53.00 - 59.58
+  cerca    :   12 imágenes  |  altura: 77.00 - 79.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-1  (total: 241 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.75 - 19.00
+  lejos    :   13 imágenes  |  altura: 23.00 - 33.00
+  medio    :   12 imágenes  |  altura: 36.00 - 41.00
+  cerca    :   12 imágenes  |  altura: 46.00 - 211.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-13a  (total: 111 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.00 - 27.00
+  lejos    :   13 imágenes  |  altura: 29.00 - 35.00
+  medio    :   12 imágenes  |  altura: 38.00 - 44.00
+  cerca    :   12 imágenes  |  altura: 63.00 - 109.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-13b  (total: 130 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.50 - 9.00
+  lejos    :   13 imágenes  |  altura: 18.75 - 37.00
+  medio    :   12 imágenes  |  altura: 40.25 - 44.00
+  cerca    :   12 imágenes  |  altura: 68.00 - 87.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-15a  (total: 1075 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 6.50 - 30.00
+  lejos    :   13 imágenes  |  altura: 32.00 - 37.00
+  medio    :   12 imágenes  |  altura: 45.00 - 72.00
+  cerca    :   12 imágenes  |  altura: 77.00 - 92.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-1a  (total: 178 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.75 - 7.25
+  lejos    :   13 imágenes  |  altura: 12.00 - 30.00
+  medio    :   12 imágenes  |  altura: 30.50 - 36.00
+  cerca    :   12 imágenes  |  altura: 57.00 - 65.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-1b  (total: 96 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.00 - 35.00
+  lejos    :   13 imágenes  |  altura: 35.00 - 52.25
+  medio    :   12 imágenes  |  altura: 55.00 - 62.00
+  cerca    :   12 imágenes  |  altura: 95.00 - 346.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-1c  (total: 50 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 32.00 - 47.00
+  lejos    :   12 imágenes  |  altura: 48.00 - 69.00
+  medio    :   13 imágenes  |  altura: 70.00 - 133.00
+  cerca    :   12 imágenes  |  altura: 146.00 - 431.00
+
+  >> Clase con mayor diferencia de dimensiones: LEJOS (12 imágenes)
+
+Clase: P-20b  (total: 178 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.75 - 8.00
+  lejos    :   13 imágenes  |  altura: 12.00 - 31.00
+  medio    :   12 imágenes  |  altura: 32.00 - 38.72
+  cerca    :   12 imágenes  |  altura: 57.13 - 102.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-21a  (total: 111 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.50 - 11.05
+  lejos    :   13 imágenes  |  altura: 17.25 - 33.00
+  medio    :   12 imágenes  |  altura: 34.00 - 39.00
+  cerca    :   12 imágenes  |  altura: 46.00 - 52.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-3  (total: 67 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 6.50 - 8.50
+  lejos    :   13 imágenes  |  altura: 9.25 - 13.25
+  medio    :   12 imágenes  |  altura: 15.75 - 40.00
+  cerca    :   12 imágenes  |  altura: 41.75 - 83.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-4  (total: 387 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.50 - 7.25
+  lejos    :   13 imágenes  |  altura: 20.50 - 36.00
+  medio    :   12 imágenes  |  altura: 45.00 - 50.25
+  cerca    :   12 imágenes  |  altura: 86.00 - 97.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: P-9c  (total: 1206 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.92 - 33.00
+  lejos    :   13 imágenes  |  altura: 34.75 - 79.00
+  medio    :   12 imágenes  |  altura: 102.00 - 119.00
+  cerca    :   12 imágenes  |  altura: 188.00 - 191.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: PDP  (total: 868 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 3.44 - 9.00
+  lejos    :   13 imágenes  |  altura: 10.50 - 12.00
+  medio    :   12 imágenes  |  altura: 18.25 - 31.00
+  cerca    :   12 imágenes  |  altura: 38.00 - 44.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-1  (total: 1828 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 4.25 - 19.00
+  lejos    :   13 imágenes  |  altura: 26.00 - 34.00
+  medio    :   12 imágenes  |  altura: 46.00 - 52.75
+  cerca    :   12 imágenes  |  altura: 88.00 - 89.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-100  (total: 110 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 10.75 - 41.00
+  lejos    :   13 imágenes  |  altura: 49.00 - 67.00
+  medio    :   12 imágenes  |  altura: 69.00 - 85.00
+  cerca    :   12 imágenes  |  altura: 111.00 - 121.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-101  (total: 1772 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 3.75 - 15.00
+  lejos    :   13 imágenes  |  altura: 15.50 - 22.00
+  medio    :   12 imágenes  |  altura: 33.00 - 36.00
+  cerca    :   12 imágenes  |  altura: 61.00 - 74.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-2  (total: 627 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.75 - 22.00
+  lejos    :   13 imágenes  |  altura: 33.00 - 36.00
+  medio    :   12 imágenes  |  altura: 51.00 - 53.00
+  cerca    :   12 imágenes  |  altura: 85.00 - 90.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-301  (total: 2263 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 3.75 - 16.00
+  lejos    :   13 imágenes  |  altura: 17.00 - 23.00
+  medio    :   12 imágenes  |  altura: 34.00 - 35.00
+  cerca    :   12 imágenes  |  altura: 61.00 - 71.31
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-302  (total: 72 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.50 - 42.00
+  lejos    :   13 imágenes  |  altura: 45.00 - 48.00
+  medio    :   12 imágenes  |  altura: 61.00 - 70.00
+  cerca    :   12 imágenes  |  altura: 86.00 - 121.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-303  (total: 56 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.25 - 10.42
+  lejos    :   13 imágenes  |  altura: 13.50 - 28.00
+  medio    :   12 imágenes  |  altura: 29.00 - 33.00
+  cerca    :   12 imágenes  |  altura: 45.00 - 48.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-304  (total: 93 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.08 - 22.00
+  lejos    :   13 imágenes  |  altura: 25.00 - 31.00
+  medio    :   12 imágenes  |  altura: 34.00 - 41.00
+  cerca    :   12 imágenes  |  altura: 48.00 - 51.75
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-305  (total: 637 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.25 - 6.25
+  lejos    :   13 imágenes  |  altura: 11.53 - 30.00
+  medio    :   12 imágenes  |  altura: 32.00 - 37.00
+  cerca    :   12 imágenes  |  altura: 63.00 - 68.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-308  (total: 707 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 4.75 - 28.00
+  lejos    :   13 imágenes  |  altura: 40.00 - 45.43
+  medio    :   12 imágenes  |  altura: 67.00 - 69.00
+  cerca    :   12 imágenes  |  altura: 121.00 - 126.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-308c  (total: 171 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 28.00 - 42.00
+  lejos    :   13 imágenes  |  altura: 60.00 - 70.00
+  medio    :   12 imágenes  |  altura: 88.00 - 118.00
+  cerca    :   12 imágenes  |  altura: 154.00 - 305.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-308d  (total: 191 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 28.00 - 51.00
+  lejos    :   13 imágenes  |  altura: 60.00 - 84.00
+  medio    :   12 imágenes  |  altura: 87.00 - 144.00
+  cerca    :   12 imágenes  |  altura: 151.00 - 162.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-308e  (total: 1482 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.00 - 84.00
+  lejos    :   13 imágenes  |  altura: 84.00 - 100.00
+  medio    :   12 imágenes  |  altura: 110.00 - 111.00
+  cerca    :   12 imágenes  |  altura: 156.00 - 158.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-308f  (total: 420 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 6.94 - 31.00
+  lejos    :   13 imágenes  |  altura: 36.00 - 37.00
+  medio    :   12 imágenes  |  altura: 53.00 - 63.89
+  cerca    :   12 imágenes  |  altura: 82.00 - 94.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-308g  (total: 70 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 28.00 - 45.00
+  lejos    :   13 imágenes  |  altura: 59.00 - 74.00
+  medio    :   12 imágenes  |  altura: 87.00 - 101.00
+  cerca    :   12 imágenes  |  altura: 122.00 - 183.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-308h  (total: 79 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 11.00 - 17.75
+  lejos    :   13 imágenes  |  altura: 28.00 - 47.78
+  medio    :   12 imágenes  |  altura: 52.00 - 60.00
+  cerca    :   12 imágenes  |  altura: 75.00 - 157.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-400a  (total: 221 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.25 - 23.00
+  lejos    :   13 imágenes  |  altura: 55.00 - 107.00
+  medio    :   12 imágenes  |  altura: 107.00 - 134.00
+  cerca    :   12 imágenes  |  altura: 182.00 - 243.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-400b  (total: 182 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.00 - 23.00
+  lejos    :   13 imágenes  |  altura: 60.00 - 65.00
+  medio    :   12 imágenes  |  altura: 111.00 - 138.00
+  cerca    :   12 imágenes  |  altura: 171.00 - 221.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-401a  (total: 521 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 4.75 - 6.25
+  lejos    :   13 imágenes  |  altura: 12.50 - 29.00
+  medio    :   12 imágenes  |  altura: 32.00 - 38.00
+  cerca    :   12 imágenes  |  altura: 53.00 - 60.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-402  (total: 857 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 4.75 - 17.00
+  lejos    :   13 imágenes  |  altura: 18.00 - 36.00
+  medio    :   12 imágenes  |  altura: 37.00 - 39.00
+  cerca    :   12 imágenes  |  altura: 74.00 - 84.58
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: R-502  (total: 101 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.89 - 11.20
+  lejos    :   13 imágenes  |  altura: 16.88 - 45.00
+  medio    :   12 imágenes  |  altura: 50.00 - 55.31
+  cerca    :   12 imágenes  |  altura: 71.00 - 97.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-105a  (total: 331 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.00 - 34.00
+  lejos    :   13 imágenes  |  altura: 38.00 - 59.67
+  medio    :   12 imágenes  |  altura: 64.00 - 101.00
+  cerca    :   12 imágenes  |  altura: 101.00 - 241.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-11  (total: 138 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 16.00 - 25.00
+  lejos    :   13 imágenes  |  altura: 33.00 - 41.00
+  medio    :   12 imágenes  |  altura: 42.00 - 54.00
+  cerca    :   12 imágenes  |  altura: 63.00 - 74.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-13  (total: 1608 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 4.50 - 21.00
+  lejos    :   13 imágenes  |  altura: 26.00 - 34.00
+  medio    :   12 imágenes  |  altura: 38.00 - 44.75
+  cerca    :   12 imágenes  |  altura: 64.00 - 67.43
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-17a  (total: 228 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 5.42 - 6.75
+  lejos    :   13 imágenes  |  altura: 9.82 - 26.00
+  medio    :   12 imágenes  |  altura: 26.00 - 37.00
+  cerca    :   12 imágenes  |  altura: 55.00 - 81.75
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-19  (total: 121 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.75 - 10.75
+  lejos    :   13 imágenes  |  altura: 13.75 - 16.25
+  medio    :   12 imágenes  |  altura: 23.25 - 36.00
+  cerca    :   12 imágenes  |  altura: 36.25 - 61.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-200  (total: 319 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 7.25 - 11.25
+  lejos    :   13 imágenes  |  altura: 19.50 - 21.25
+  medio    :   12 imágenes  |  altura: 42.50 - 74.00
+  cerca    :   12 imágenes  |  altura: 106.00 - 122.81
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-300  (total: 457 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 6.43 - 32.00
+  lejos    :   13 imágenes  |  altura: 33.00 - 43.93
+  medio    :   12 imágenes  |  altura: 48.00 - 58.75
+  cerca    :   12 imágenes  |  altura: 67.00 - 75.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-348a  (total: 101 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 4.25 - 7.00
+  lejos    :   13 imágenes  |  altura: 18.07 - 93.00
+  medio    :   12 imágenes  |  altura: 95.00 - 112.00
+  cerca    :   12 imágenes  |  altura: 157.00 - 218.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-400  (total: 60 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 3.55 - 5.42
+  lejos    :   13 imágenes  |  altura: 6.11 - 7.50
+  medio    :   12 imágenes  |  altura: 7.92 - 9.56
+  cerca    :   12 imágenes  |  altura: 11.25 - 13.75
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-572  (total: 188 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 8.75 - 11.75
+  lejos    :   13 imágenes  |  altura: 21.50 - 50.00
+  medio    :   12 imágenes  |  altura: 50.00 - 57.00
+  cerca    :   12 imágenes  |  altura: 86.00 - 92.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-600  (total: 86 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 9.50 - 15.62
+  lejos    :   13 imágenes  |  altura: 27.50 - 53.00
+  medio    :   12 imágenes  |  altura: 62.00 - 75.94
+  cerca    :   12 imágenes  |  altura: 96.00 - 142.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+Clase: S-800  (total: 140 -> balanceado: 50 imágenes)
+----------------------------------------
+  muy_lejos:   13 imágenes  |  altura: 3.75 - 5.83
+  lejos    :   13 imágenes  |  altura: 12.86 - 25.00
+  medio    :   12 imágenes  |  altura: 27.00 - 30.00
+  cerca    :   12 imágenes  |  altura: 38.00 - 51.00
+
+  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+
+============================================================
+Total de clases analizadas: 47
