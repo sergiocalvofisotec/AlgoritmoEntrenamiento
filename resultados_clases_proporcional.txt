@@ -1,428 +1,819 @@
 RESUMEN DE CLASES - DISTRIBUCIÓN PROPORCIONAL
 ============================================================
 
-Clase: BCV  (total: 837 -> balanceado: 50 imágenes)
+Clase: BCV  (total: 837 -> balanceado: 837 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 1.00 - 17.00
-  lejos    :   13 imágenes  |  altura: 23.00 - 30.00
-  medio    :   12 imágenes  |  altura: 53.00 - 59.58
-  cerca    :   12 imágenes  |  altura: 77.00 - 79.00
+  muy_pequeño :  210 imágenes  |  altura: 1.00 - 23.00
+  pequeño     :  209 imágenes  |  altura: 23.00 - 53.00
+  medio       :  209 imágenes  |  altura: 53.00 - 63.08
+  grande      :  209 imágenes  |  altura: 77.00 - 447.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (209 imágenes)
 
-Clase: P-1  (total: 241 -> balanceado: 50 imágenes)
+Clase: P-1  (total: 241 -> balanceado: 241 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.75 - 19.00
-  lejos    :   13 imágenes  |  altura: 23.00 - 33.00
-  medio    :   12 imágenes  |  altura: 36.00 - 41.00
-  cerca    :   12 imágenes  |  altura: 46.00 - 211.00
+  muy_pequeño :   61 imágenes  |  altura: 5.75 - 19.00
+  pequeño     :   60 imágenes  |  altura: 23.00 - 33.00
+  medio       :   60 imágenes  |  altura: 36.00 - 41.00
+  grande      :   60 imágenes  |  altura: 46.00 - 231.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (60 imágenes)
 
-Clase: P-13a  (total: 111 -> balanceado: 50 imágenes)
+Clase: P-13a  (total: 111 -> balanceado: 111 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.00 - 27.00
-  lejos    :   13 imágenes  |  altura: 29.00 - 35.00
-  medio    :   12 imágenes  |  altura: 38.00 - 44.00
-  cerca    :   12 imágenes  |  altura: 63.00 - 109.00
+  muy_pequeño :   28 imágenes  |  altura: 7.00 - 27.00
+  pequeño     :   28 imágenes  |  altura: 29.00 - 38.00
+  medio       :   28 imágenes  |  altura: 38.00 - 46.00
+  grande      :   27 imágenes  |  altura: 63.00 - 109.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (27 imágenes)
 
-Clase: P-13b  (total: 130 -> balanceado: 50 imágenes)
+Clase: P-13b  (total: 130 -> balanceado: 130 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.50 - 9.00
-  lejos    :   13 imágenes  |  altura: 18.75 - 37.00
-  medio    :   12 imágenes  |  altura: 40.25 - 44.00
-  cerca    :   12 imágenes  |  altura: 68.00 - 87.00
+  muy_pequeño :   33 imágenes  |  altura: 5.50 - 17.90
+  pequeño     :   32 imágenes  |  altura: 18.75 - 40.00
+  medio       :   33 imágenes  |  altura: 40.25 - 68.00
+  grande      :   32 imágenes  |  altura: 68.00 - 152.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (32 imágenes)
 
-Clase: P-15a  (total: 1075 -> balanceado: 50 imágenes)
+Clase: P-15a  (total: 1075 -> balanceado: 1000 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 6.50 - 30.00
-  lejos    :   13 imágenes  |  altura: 32.00 - 37.00
-  medio    :   12 imágenes  |  altura: 45.00 - 72.00
-  cerca    :   12 imágenes  |  altura: 77.00 - 92.00
+  muy_pequeño :  250 imágenes  |  altura: 6.50 - 31.00
+  pequeño     :  250 imágenes  |  altura: 32.00 - 45.00
+  medio       :  250 imágenes  |  altura: 45.00 - 72.00
+  grande      :  250 imágenes  |  altura: 77.00 - 92.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
 
-Clase: P-1a  (total: 178 -> balanceado: 50 imágenes)
+Clase: P-1a  (total: 178 -> balanceado: 178 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.75 - 7.25
-  lejos    :   13 imágenes  |  altura: 12.00 - 30.00
-  medio    :   12 imágenes  |  altura: 30.50 - 36.00
-  cerca    :   12 imágenes  |  altura: 57.00 - 65.00
+  muy_pequeño :   45 imágenes  |  altura: 5.75 - 11.75
+  pequeño     :   44 imágenes  |  altura: 12.00 - 30.00
+  medio       :   45 imágenes  |  altura: 30.50 - 55.00
+  grande      :   44 imágenes  |  altura: 57.00 - 208.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (44 imágenes)
 
-Clase: P-1b  (total: 96 -> balanceado: 50 imágenes)
+Clase: P-1b  (total: 96 -> balanceado: 96 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.00 - 35.00
-  lejos    :   13 imágenes  |  altura: 35.00 - 52.25
-  medio    :   12 imágenes  |  altura: 55.00 - 62.00
-  cerca    :   12 imágenes  |  altura: 95.00 - 346.00
+  muy_pequeño :   24 imágenes  |  altura: 7.00 - 35.00
+  pequeño     :   24 imágenes  |  altura: 35.00 - 52.25
+  medio       :   24 imágenes  |  altura: 55.00 - 62.00
+  grande      :   24 imágenes  |  altura: 95.00 - 346.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (24 imágenes)
 
 Clase: P-1c  (total: 50 -> balanceado: 50 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 32.00 - 47.00
-  lejos    :   12 imágenes  |  altura: 48.00 - 69.00
-  medio    :   13 imágenes  |  altura: 70.00 - 133.00
-  cerca    :   12 imágenes  |  altura: 146.00 - 431.00
+  muy_pequeño :   13 imágenes  |  altura: 32.00 - 47.00
+  pequeño     :   12 imágenes  |  altura: 48.00 - 69.00
+  medio       :   13 imágenes  |  altura: 70.00 - 133.00
+  grande      :   12 imágenes  |  altura: 146.00 - 431.00
 
-  >> Clase con mayor diferencia de dimensiones: LEJOS (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (12 imágenes)
 
-Clase: P-20b  (total: 178 -> balanceado: 50 imágenes)
+Clase: P-20b  (total: 178 -> balanceado: 178 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.75 - 8.00
-  lejos    :   13 imágenes  |  altura: 12.00 - 31.00
-  medio    :   12 imágenes  |  altura: 32.00 - 38.72
-  cerca    :   12 imágenes  |  altura: 57.13 - 102.00
+  muy_pequeño :   45 imágenes  |  altura: 5.75 - 11.75
+  pequeño     :   44 imágenes  |  altura: 12.00 - 31.00
+  medio       :   45 imágenes  |  altura: 32.00 - 52.50
+  grande      :   44 imágenes  |  altura: 57.13 - 102.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (44 imágenes)
 
-Clase: P-21a  (total: 111 -> balanceado: 50 imágenes)
+Clase: P-21a  (total: 111 -> balanceado: 111 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.50 - 11.05
-  lejos    :   13 imágenes  |  altura: 17.25 - 33.00
-  medio    :   12 imágenes  |  altura: 34.00 - 39.00
-  cerca    :   12 imágenes  |  altura: 46.00 - 52.00
+  muy_pequeño :   28 imágenes  |  altura: 7.50 - 16.75
+  pequeño     :   28 imágenes  |  altura: 17.25 - 33.00
+  medio       :   28 imágenes  |  altura: 34.00 - 45.00
+  grande      :   27 imágenes  |  altura: 46.00 - 107.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (27 imágenes)
 
-Clase: P-3  (total: 67 -> balanceado: 50 imágenes)
+Clase: P-3  (total: 67 -> balanceado: 67 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 6.50 - 8.50
-  lejos    :   13 imágenes  |  altura: 9.25 - 13.25
-  medio    :   12 imágenes  |  altura: 15.75 - 40.00
-  cerca    :   12 imágenes  |  altura: 41.75 - 83.00
+  muy_pequeño :   17 imágenes  |  altura: 6.50 - 9.00
+  pequeño     :   17 imágenes  |  altura: 9.25 - 15.00
+  medio       :   17 imágenes  |  altura: 15.75 - 40.00
+  grande      :   16 imágenes  |  altura: 41.75 - 345.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (16 imágenes)
 
-Clase: P-4  (total: 387 -> balanceado: 50 imágenes)
+Clase: P-4  (total: 387 -> balanceado: 387 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.50 - 7.25
-  lejos    :   13 imágenes  |  altura: 20.50 - 36.00
-  medio    :   12 imágenes  |  altura: 45.00 - 50.25
-  cerca    :   12 imágenes  |  altura: 86.00 - 97.00
+  muy_pequeño :   97 imágenes  |  altura: 5.50 - 20.50
+  pequeño     :   97 imágenes  |  altura: 20.50 - 45.00
+  medio       :   97 imágenes  |  altura: 45.00 - 77.00
+  grande      :   96 imágenes  |  altura: 86.00 - 298.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (96 imágenes)
 
-Clase: P-9c  (total: 1206 -> balanceado: 50 imágenes)
+Clase: P-9c  (total: 1206 -> balanceado: 1000 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.92 - 33.00
-  lejos    :   13 imágenes  |  altura: 34.75 - 79.00
-  medio    :   12 imágenes  |  altura: 102.00 - 119.00
-  cerca    :   12 imágenes  |  altura: 188.00 - 191.00
+  muy_pequeño :  250 imágenes  |  altura: 7.92 - 33.00
+  pequeño     :  250 imágenes  |  altura: 34.75 - 99.00
+  medio       :  250 imágenes  |  altura: 102.00 - 188.00
+  grande      :  250 imágenes  |  altura: 188.00 - 487.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
 
-Clase: PDP  (total: 868 -> balanceado: 50 imágenes)
+Clase: PDP  (total: 868 -> balanceado: 868 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 3.44 - 9.00
-  lejos    :   13 imágenes  |  altura: 10.50 - 12.00
-  medio    :   12 imágenes  |  altura: 18.25 - 31.00
-  cerca    :   12 imágenes  |  altura: 38.00 - 44.00
+  muy_pequeño :  217 imágenes  |  altura: 3.44 - 9.00
+  pequeño     :  217 imágenes  |  altura: 10.50 - 18.00
+  medio       :  217 imágenes  |  altura: 18.25 - 38.00
+  grande      :  217 imágenes  |  altura: 38.00 - 74.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (217 imágenes)
 
-Clase: R-1  (total: 1828 -> balanceado: 50 imágenes)
+Clase: R-1  (total: 1828 -> balanceado: 1000 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 4.25 - 19.00
-  lejos    :   13 imágenes  |  altura: 26.00 - 34.00
-  medio    :   12 imágenes  |  altura: 46.00 - 52.75
-  cerca    :   12 imágenes  |  altura: 88.00 - 89.00
+  muy_pequeño :  250 imágenes  |  altura: 4.25 - 26.00
+  pequeño     :  250 imágenes  |  altura: 26.00 - 45.00
+  medio       :  250 imágenes  |  altura: 46.00 - 79.50
+  grande      :  250 imágenes  |  altura: 88.00 - 493.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
 
-Clase: R-100  (total: 110 -> balanceado: 50 imágenes)
+Clase: R-100  (total: 110 -> balanceado: 110 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 10.75 - 41.00
-  lejos    :   13 imágenes  |  altura: 49.00 - 67.00
-  medio    :   12 imágenes  |  altura: 69.00 - 85.00
-  cerca    :   12 imágenes  |  altura: 111.00 - 121.00
+  muy_pequeño :   28 imágenes  |  altura: 10.75 - 41.00
+  pequeño     :   27 imágenes  |  altura: 49.00 - 67.00
+  medio       :   28 imágenes  |  altura: 69.00 - 85.00
+  grande      :   27 imágenes  |  altura: 111.00 - 121.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (27 imágenes)
 
-Clase: R-101  (total: 1772 -> balanceado: 50 imágenes)
+Clase: R-101  (total: 1772 -> balanceado: 1000 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 3.75 - 15.00
-  lejos    :   13 imágenes  |  altura: 15.50 - 22.00
-  medio    :   12 imágenes  |  altura: 33.00 - 36.00
-  cerca    :   12 imágenes  |  altura: 61.00 - 74.00
+  muy_pequeño :  250 imágenes  |  altura: 3.75 - 15.00
+  pequeño     :  250 imágenes  |  altura: 15.50 - 32.00
+  medio       :  250 imágenes  |  altura: 33.00 - 61.00
+  grande      :  250 imágenes  |  altura: 61.00 - 342.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
 
-Clase: R-2  (total: 627 -> balanceado: 50 imágenes)
+Clase: R-2  (total: 627 -> balanceado: 627 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.75 - 22.00
-  lejos    :   13 imágenes  |  altura: 33.00 - 36.00
-  medio    :   12 imágenes  |  altura: 51.00 - 53.00
-  cerca    :   12 imágenes  |  altura: 85.00 - 90.00
+  muy_pequeño :  157 imágenes  |  altura: 5.75 - 33.00
+  pequeño     :  157 imágenes  |  altura: 33.00 - 51.00
+  medio       :  157 imágenes  |  altura: 51.00 - 82.00
+  grande      :  156 imágenes  |  altura: 85.00 - 340.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (156 imágenes)
 
-Clase: R-301  (total: 2263 -> balanceado: 50 imágenes)
+Clase: R-301  (total: 2263 -> balanceado: 1000 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 3.75 - 16.00
-  lejos    :   13 imágenes  |  altura: 17.00 - 23.00
-  medio    :   12 imágenes  |  altura: 34.00 - 35.00
-  cerca    :   12 imágenes  |  altura: 61.00 - 71.31
+  muy_pequeño :  250 imágenes  |  altura: 3.75 - 16.00
+  pequeño     :  250 imágenes  |  altura: 17.00 - 31.00
+  medio       :  250 imágenes  |  altura: 34.00 - 42.00
+  grande      :  250 imágenes  |  altura: 61.00 - 71.31
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
 
-Clase: R-302  (total: 72 -> balanceado: 50 imágenes)
+Clase: R-302  (total: 72 -> balanceado: 72 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.50 - 42.00
-  lejos    :   13 imágenes  |  altura: 45.00 - 48.00
-  medio    :   12 imágenes  |  altura: 61.00 - 70.00
-  cerca    :   12 imágenes  |  altura: 86.00 - 121.00
+  muy_pequeño :   18 imágenes  |  altura: 7.50 - 42.00
+  pequeño     :   18 imágenes  |  altura: 45.00 - 48.00
+  medio       :   18 imágenes  |  altura: 61.00 - 70.00
+  grande      :   18 imágenes  |  altura: 86.00 - 219.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (18 imágenes)
 
-Clase: R-303  (total: 56 -> balanceado: 50 imágenes)
+Clase: R-303  (total: 56 -> balanceado: 56 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.25 - 10.42
-  lejos    :   13 imágenes  |  altura: 13.50 - 28.00
-  medio    :   12 imágenes  |  altura: 29.00 - 33.00
-  cerca    :   12 imágenes  |  altura: 45.00 - 48.00
+  muy_pequeño :   14 imágenes  |  altura: 5.25 - 10.75
+  pequeño     :   14 imágenes  |  altura: 13.50 - 28.00
+  medio       :   14 imágenes  |  altura: 29.00 - 33.00
+  grande      :   14 imágenes  |  altura: 45.00 - 48.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (14 imágenes)
 
-Clase: R-304  (total: 93 -> balanceado: 50 imágenes)
+Clase: R-304  (total: 93 -> balanceado: 93 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.08 - 22.00
-  lejos    :   13 imágenes  |  altura: 25.00 - 31.00
-  medio    :   12 imágenes  |  altura: 34.00 - 41.00
-  cerca    :   12 imágenes  |  altura: 48.00 - 51.75
+  muy_pequeño :   24 imágenes  |  altura: 7.08 - 25.00
+  pequeño     :   23 imágenes  |  altura: 25.00 - 34.00
+  medio       :   23 imágenes  |  altura: 34.00 - 46.00
+  grande      :   23 imágenes  |  altura: 48.00 - 51.75
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (23 imágenes)
 
-Clase: R-305  (total: 637 -> balanceado: 50 imágenes)
+Clase: R-305  (total: 637 -> balanceado: 637 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.25 - 6.25
-  lejos    :   13 imágenes  |  altura: 11.53 - 30.00
-  medio    :   12 imágenes  |  altura: 32.00 - 37.00
-  cerca    :   12 imágenes  |  altura: 63.00 - 68.00
+  muy_pequeño :  160 imágenes  |  altura: 5.25 - 11.50
+  pequeño     :  159 imágenes  |  altura: 11.53 - 30.00
+  medio       :  159 imágenes  |  altura: 32.00 - 62.00
+  grande      :  159 imágenes  |  altura: 63.00 - 108.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (159 imágenes)
 
-Clase: R-308  (total: 707 -> balanceado: 50 imágenes)
+Clase: R-308  (total: 707 -> balanceado: 707 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 4.75 - 28.00
-  lejos    :   13 imágenes  |  altura: 40.00 - 45.43
-  medio    :   12 imágenes  |  altura: 67.00 - 69.00
-  cerca    :   12 imágenes  |  altura: 121.00 - 126.00
+  muy_pequeño :  177 imágenes  |  altura: 4.75 - 40.00
+  pequeño     :  177 imágenes  |  altura: 40.00 - 45.43
+  medio       :  177 imágenes  |  altura: 67.00 - 118.00
+  grande      :  176 imágenes  |  altura: 121.00 - 482.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (176 imágenes)
 
-Clase: R-308c  (total: 171 -> balanceado: 50 imágenes)
+Clase: R-308c  (total: 171 -> balanceado: 171 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 28.00 - 42.00
-  lejos    :   13 imágenes  |  altura: 60.00 - 70.00
-  medio    :   12 imágenes  |  altura: 88.00 - 118.00
-  cerca    :   12 imágenes  |  altura: 154.00 - 305.00
+  muy_pequeño :   43 imágenes  |  altura: 28.00 - 58.00
+  pequeño     :   43 imágenes  |  altura: 60.00 - 88.00
+  medio       :   43 imágenes  |  altura: 88.00 - 153.00
+  grande      :   42 imágenes  |  altura: 154.00 - 305.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (42 imágenes)
 
-Clase: R-308d  (total: 191 -> balanceado: 50 imágenes)
+Clase: R-308d  (total: 191 -> balanceado: 191 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 28.00 - 51.00
-  lejos    :   13 imágenes  |  altura: 60.00 - 84.00
-  medio    :   12 imágenes  |  altura: 87.00 - 144.00
-  cerca    :   12 imágenes  |  altura: 151.00 - 162.00
+  muy_pequeño :   48 imágenes  |  altura: 28.00 - 57.00
+  pequeño     :   48 imágenes  |  altura: 60.00 - 84.00
+  medio       :   48 imágenes  |  altura: 87.00 - 144.00
+  grande      :   47 imágenes  |  altura: 151.00 - 162.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (47 imágenes)
 
-Clase: R-308e  (total: 1482 -> balanceado: 50 imágenes)
+Clase: R-308e  (total: 1482 -> balanceado: 1000 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.00 - 84.00
-  lejos    :   13 imágenes  |  altura: 84.00 - 100.00
-  medio    :   12 imágenes  |  altura: 110.00 - 111.00
-  cerca    :   12 imágenes  |  altura: 156.00 - 158.00
+  muy_pequeño :  250 imágenes  |  altura: 7.00 - 84.00
+  pequeño     :  250 imágenes  |  altura: 84.00 - 100.00
+  medio       :  250 imágenes  |  altura: 110.00 - 130.00
+  grande      :  250 imágenes  |  altura: 156.00 - 252.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
 
-Clase: R-308f  (total: 420 -> balanceado: 50 imágenes)
+Clase: R-308f  (total: 420 -> balanceado: 420 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 6.94 - 31.00
-  lejos    :   13 imágenes  |  altura: 36.00 - 37.00
-  medio    :   12 imágenes  |  altura: 53.00 - 63.89
-  cerca    :   12 imágenes  |  altura: 82.00 - 94.00
+  muy_pequeño :  105 imágenes  |  altura: 6.94 - 36.00
+  pequeño     :  105 imágenes  |  altura: 36.00 - 51.00
+  medio       :  105 imágenes  |  altura: 53.00 - 63.89
+  grande      :  105 imágenes  |  altura: 82.00 - 94.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (105 imágenes)
 
-Clase: R-308g  (total: 70 -> balanceado: 50 imágenes)
+Clase: R-308g  (total: 70 -> balanceado: 70 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 28.00 - 45.00
-  lejos    :   13 imágenes  |  altura: 59.00 - 74.00
-  medio    :   12 imágenes  |  altura: 87.00 - 101.00
-  cerca    :   12 imágenes  |  altura: 122.00 - 183.00
+  muy_pequeño :   18 imágenes  |  altura: 28.00 - 59.00
+  pequeño     :   17 imágenes  |  altura: 59.00 - 81.00
+  medio       :   18 imágenes  |  altura: 87.00 - 122.00
+  grande      :   17 imágenes  |  altura: 122.00 - 388.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (17 imágenes)
 
-Clase: R-308h  (total: 79 -> balanceado: 50 imágenes)
+Clase: R-308h  (total: 79 -> balanceado: 79 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 11.00 - 17.75
-  lejos    :   13 imágenes  |  altura: 28.00 - 47.78
-  medio    :   12 imágenes  |  altura: 52.00 - 60.00
-  cerca    :   12 imágenes  |  altura: 75.00 - 157.00
+  muy_pequeño :   20 imágenes  |  altura: 11.00 - 27.75
+  pequeño     :   20 imágenes  |  altura: 28.00 - 47.78
+  medio       :   20 imágenes  |  altura: 52.00 - 75.00
+  grande      :   19 imágenes  |  altura: 75.00 - 176.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (19 imágenes)
 
-Clase: R-400a  (total: 221 -> balanceado: 50 imágenes)
+Clase: R-400a  (total: 221 -> balanceado: 221 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.25 - 23.00
-  lejos    :   13 imágenes  |  altura: 55.00 - 107.00
-  medio    :   12 imágenes  |  altura: 107.00 - 134.00
-  cerca    :   12 imágenes  |  altura: 182.00 - 243.00
+  muy_pequeño :   56 imágenes  |  altura: 7.25 - 49.00
+  pequeño     :   55 imágenes  |  altura: 55.00 - 107.00
+  medio       :   55 imágenes  |  altura: 107.00 - 164.00
+  grande      :   55 imágenes  |  altura: 182.00 - 243.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (55 imágenes)
 
-Clase: R-400b  (total: 182 -> balanceado: 50 imágenes)
+Clase: R-400b  (total: 182 -> balanceado: 182 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.00 - 23.00
-  lejos    :   13 imágenes  |  altura: 60.00 - 65.00
-  medio    :   12 imágenes  |  altura: 111.00 - 138.00
-  cerca    :   12 imágenes  |  altura: 171.00 - 221.00
+  muy_pequeño :   46 imágenes  |  altura: 5.00 - 48.00
+  pequeño     :   45 imágenes  |  altura: 60.00 - 106.00
+  medio       :   46 imágenes  |  altura: 111.00 - 160.00
+  grande      :   45 imágenes  |  altura: 171.00 - 480.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (45 imágenes)
 
-Clase: R-401a  (total: 521 -> balanceado: 50 imágenes)
+Clase: R-401a  (total: 521 -> balanceado: 521 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 4.75 - 6.25
-  lejos    :   13 imágenes  |  altura: 12.50 - 29.00
-  medio    :   12 imágenes  |  altura: 32.00 - 38.00
-  cerca    :   12 imágenes  |  altura: 53.00 - 60.00
+  muy_pequeño :  131 imágenes  |  altura: 4.75 - 12.37
+  pequeño     :  130 imágenes  |  altura: 12.50 - 29.00
+  medio       :  130 imágenes  |  altura: 32.00 - 52.00
+  grande      :  130 imágenes  |  altura: 53.00 - 300.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (130 imágenes)
 
-Clase: R-402  (total: 857 -> balanceado: 50 imágenes)
+Clase: R-402  (total: 857 -> balanceado: 857 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 4.75 - 17.00
-  lejos    :   13 imágenes  |  altura: 18.00 - 36.00
-  medio    :   12 imágenes  |  altura: 37.00 - 39.00
-  cerca    :   12 imágenes  |  altura: 74.00 - 84.58
+  muy_pequeño :  215 imágenes  |  altura: 4.75 - 18.00
+  pequeño     :  214 imágenes  |  altura: 18.00 - 37.00
+  medio       :  214 imágenes  |  altura: 37.00 - 71.00
+  grande      :  214 imágenes  |  altura: 74.00 - 84.58
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (214 imágenes)
 
-Clase: R-502  (total: 101 -> balanceado: 50 imágenes)
+Clase: R-502  (total: 101 -> balanceado: 101 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.89 - 11.20
-  lejos    :   13 imágenes  |  altura: 16.88 - 45.00
-  medio    :   12 imágenes  |  altura: 50.00 - 55.31
-  cerca    :   12 imágenes  |  altura: 71.00 - 97.00
+  muy_pequeño :   26 imágenes  |  altura: 7.89 - 16.25
+  pequeño     :   25 imágenes  |  altura: 16.88 - 45.00
+  medio       :   25 imágenes  |  altura: 50.00 - 55.31
+  grande      :   25 imágenes  |  altura: 71.00 - 403.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (25 imágenes)
 
-Clase: S-105a  (total: 331 -> balanceado: 50 imágenes)
+Clase: S-105a  (total: 331 -> balanceado: 331 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.00 - 34.00
-  lejos    :   13 imágenes  |  altura: 38.00 - 59.67
-  medio    :   12 imágenes  |  altura: 64.00 - 101.00
-  cerca    :   12 imágenes  |  altura: 101.00 - 241.00
+  muy_pequeño :   83 imágenes  |  altura: 7.00 - 34.00
+  pequeño     :   83 imágenes  |  altura: 38.00 - 59.67
+  medio       :   83 imágenes  |  altura: 64.00 - 84.00
+  grande      :   82 imágenes  |  altura: 101.00 - 316.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (82 imágenes)
 
-Clase: S-11  (total: 138 -> balanceado: 50 imágenes)
+Clase: S-11  (total: 138 -> balanceado: 138 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 16.00 - 25.00
-  lejos    :   13 imágenes  |  altura: 33.00 - 41.00
-  medio    :   12 imágenes  |  altura: 42.00 - 54.00
-  cerca    :   12 imágenes  |  altura: 63.00 - 74.00
+  muy_pequeño :   35 imágenes  |  altura: 16.00 - 32.00
+  pequeño     :   34 imágenes  |  altura: 33.00 - 41.00
+  medio       :   35 imágenes  |  altura: 42.00 - 55.00
+  grande      :   34 imágenes  |  altura: 63.00 - 280.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (34 imágenes)
 
-Clase: S-13  (total: 1608 -> balanceado: 50 imágenes)
+Clase: S-13  (total: 1608 -> balanceado: 1000 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 4.50 - 21.00
-  lejos    :   13 imágenes  |  altura: 26.00 - 34.00
-  medio    :   12 imágenes  |  altura: 38.00 - 44.75
-  cerca    :   12 imágenes  |  altura: 64.00 - 67.43
+  muy_pequeño :  250 imágenes  |  altura: 4.50 - 26.00
+  pequeño     :  250 imágenes  |  altura: 26.00 - 38.00
+  medio       :  250 imágenes  |  altura: 38.00 - 60.59
+  grande      :  250 imágenes  |  altura: 64.00 - 67.43
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
 
-Clase: S-17a  (total: 228 -> balanceado: 50 imágenes)
+Clase: S-17a  (total: 228 -> balanceado: 228 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 5.42 - 6.75
-  lejos    :   13 imágenes  |  altura: 9.82 - 26.00
-  medio    :   12 imágenes  |  altura: 26.00 - 37.00
-  cerca    :   12 imágenes  |  altura: 55.00 - 81.75
+  muy_pequeño :   57 imágenes  |  altura: 5.42 - 9.75
+  pequeño     :   57 imágenes  |  altura: 9.82 - 26.00
+  medio       :   57 imágenes  |  altura: 26.00 - 42.75
+  grande      :   57 imágenes  |  altura: 55.00 - 81.75
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (57 imágenes)
 
-Clase: S-19  (total: 121 -> balanceado: 50 imágenes)
+Clase: S-19  (total: 121 -> balanceado: 121 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.75 - 10.75
-  lejos    :   13 imágenes  |  altura: 13.75 - 16.25
-  medio    :   12 imágenes  |  altura: 23.25 - 36.00
-  cerca    :   12 imágenes  |  altura: 36.25 - 61.00
+  muy_pequeño :   31 imágenes  |  altura: 7.75 - 13.75
+  pequeño     :   30 imágenes  |  altura: 13.75 - 22.50
+  medio       :   30 imágenes  |  altura: 23.25 - 36.00
+  grande      :   30 imágenes  |  altura: 36.25 - 283.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (30 imágenes)
 
-Clase: S-200  (total: 319 -> balanceado: 50 imágenes)
+Clase: S-200  (total: 319 -> balanceado: 319 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 7.25 - 11.25
-  lejos    :   13 imágenes  |  altura: 19.50 - 21.25
-  medio    :   12 imágenes  |  altura: 42.50 - 74.00
-  cerca    :   12 imágenes  |  altura: 106.00 - 122.81
+  muy_pequeño :   80 imágenes  |  altura: 7.25 - 19.50
+  pequeño     :   80 imágenes  |  altura: 19.50 - 42.31
+  medio       :   80 imágenes  |  altura: 42.50 - 102.00
+  grande      :   79 imágenes  |  altura: 106.00 - 122.81
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: GRANDE (79 imágenes)
 
-Clase: S-300  (total: 457 -> balanceado: 50 imágenes)
+Clase: S-300  (total: 457 -> balanceado: 457 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 6.43 - 32.00
-  lejos    :   13 imágenes  |  altura: 33.00 - 43.93
-  medio    :   12 imágenes  |  altura: 48.00 - 58.75
-  cerca    :   12 imágenes  |  altura: 67.00 - 75.00
+  muy_pequeño :  115 imágenes  |  altura: 6.43 - 32.00
+  pequeño     :  114 imágenes  |  altura: 33.00 - 43.93
+  medio       :  114 imágenes  |  altura: 48.00 - 58.75
+  grande      :  114 imágenes  |  altura: 67.00 - 185.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (114 imágenes)
 
-Clase: S-348a  (total: 101 -> balanceado: 50 imágenes)
+Clase: S-348a  (total: 101 -> balanceado: 101 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 4.25 - 7.00
-  lejos    :   13 imágenes  |  altura: 18.07 - 93.00
-  medio    :   12 imágenes  |  altura: 95.00 - 112.00
-  cerca    :   12 imágenes  |  altura: 157.00 - 218.00
+  muy_pequeño :   26 imágenes  |  altura: 4.25 - 17.50
+  pequeño     :   25 imágenes  |  altura: 18.07 - 95.00
+  medio       :   25 imágenes  |  altura: 95.00 - 155.00
+  grande      :   25 imágenes  |  altura: 157.00 - 499.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (25 imágenes)
 
-Clase: S-400  (total: 60 -> balanceado: 50 imágenes)
+Clase: S-400  (total: 60 -> balanceado: 60 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 3.55 - 5.42
-  lejos    :   13 imágenes  |  altura: 6.11 - 7.50
-  medio    :   12 imágenes  |  altura: 7.92 - 9.56
-  cerca    :   12 imágenes  |  altura: 11.25 - 13.75
+  muy_pequeño :   15 imágenes  |  altura: 3.55 - 6.02
+  pequeño     :   15 imágenes  |  altura: 6.11 - 7.74
+  medio       :   15 imágenes  |  altura: 7.92 - 10.42
+  grande      :   15 imágenes  |  altura: 11.25 - 18.86
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (15 imágenes)
 
-Clase: S-572  (total: 188 -> balanceado: 50 imágenes)
+Clase: S-572  (total: 188 -> balanceado: 188 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 8.75 - 11.75
-  lejos    :   13 imágenes  |  altura: 21.50 - 50.00
-  medio    :   12 imágenes  |  altura: 50.00 - 57.00
-  cerca    :   12 imágenes  |  altura: 86.00 - 92.00
+  muy_pequeño :   47 imágenes  |  altura: 8.75 - 20.75
+  pequeño     :   47 imágenes  |  altura: 21.50 - 50.00
+  medio       :   47 imágenes  |  altura: 50.00 - 71.00
+  grande      :   47 imágenes  |  altura: 86.00 - 134.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (47 imágenes)
 
-Clase: S-600  (total: 86 -> balanceado: 50 imágenes)
+Clase: S-600  (total: 86 -> balanceado: 86 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 9.50 - 15.62
-  lejos    :   13 imágenes  |  altura: 27.50 - 53.00
-  medio    :   12 imágenes  |  altura: 62.00 - 75.94
-  cerca    :   12 imágenes  |  altura: 96.00 - 142.00
+  muy_pequeño :   22 imágenes  |  altura: 9.50 - 23.00
+  pequeño     :   21 imágenes  |  altura: 27.50 - 61.00
+  medio       :   22 imágenes  |  altura: 62.00 - 75.94
+  grande      :   21 imágenes  |  altura: 96.00 - 412.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (21 imágenes)
 
-Clase: S-800  (total: 140 -> balanceado: 50 imágenes)
+Clase: S-800  (total: 140 -> balanceado: 140 imágenes)
 ----------------------------------------
-  muy_lejos:   13 imágenes  |  altura: 3.75 - 5.83
-  lejos    :   13 imágenes  |  altura: 12.86 - 25.00
-  medio    :   12 imágenes  |  altura: 27.00 - 30.00
-  cerca    :   12 imágenes  |  altura: 38.00 - 51.00
+  muy_pequeño :   35 imágenes  |  altura: 3.75 - 10.87
+  pequeño     :   35 imágenes  |  altura: 12.86 - 25.00
+  medio       :   35 imágenes  |  altura: 27.00 - 38.00
+  grande      :   35 imágenes  |  altura: 38.00 - 96.00
 
-  >> Clase con mayor diferencia de dimensiones: MEDIO (12 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (35 imágenes)
 
 ============================================================
 Total de clases analizadas: 47
+
+============================================================
+DATA AUGMENTATION RECOMENDADO
+============================================================
+
+Factor de augmentation: x5
+
+Clase: BCV
+  Originales: 837 -> Objetivo: 4185
+  Augmentaciones a generar: 3348
+    muy_pequeño :  210 -> 1050 (840 a generar)
+    pequeño     :  209 -> 1045 (836 a generar)
+    medio       :  209 -> 1045 (836 a generar)
+    grande      :  209 -> 1045 (836 a generar)
+
+Clase: P-1
+  Originales: 241 -> Objetivo: 1205
+  Augmentaciones a generar: 964
+    muy_pequeño :   61 ->  305 (244 a generar)
+    pequeño     :   60 ->  300 (240 a generar)
+    medio       :   60 ->  300 (240 a generar)
+    grande      :   60 ->  300 (240 a generar)
+
+Clase: P-13a
+  Originales: 111 -> Objetivo: 555
+  Augmentaciones a generar: 444
+    muy_pequeño :   28 ->  140 (112 a generar)
+    pequeño     :   28 ->  140 (112 a generar)
+    medio       :   28 ->  140 (112 a generar)
+    grande      :   27 ->  135 (108 a generar)
+
+Clase: P-13b
+  Originales: 130 -> Objetivo: 650
+  Augmentaciones a generar: 520
+    muy_pequeño :   33 ->  165 (132 a generar)
+    pequeño     :   32 ->  160 (128 a generar)
+    medio       :   33 ->  165 (132 a generar)
+    grande      :   32 ->  160 (128 a generar)
+
+Clase: P-15a
+  Originales: 1000 -> Objetivo: 5000
+  Augmentaciones a generar: 4000
+    muy_pequeño :  250 -> 1250 (1000 a generar)
+    pequeño     :  250 -> 1250 (1000 a generar)
+    medio       :  250 -> 1250 (1000 a generar)
+    grande      :  250 -> 1250 (1000 a generar)
+
+Clase: P-1a
+  Originales: 178 -> Objetivo: 890
+  Augmentaciones a generar: 712
+    muy_pequeño :   45 ->  225 (180 a generar)
+    pequeño     :   44 ->  220 (176 a generar)
+    medio       :   45 ->  225 (180 a generar)
+    grande      :   44 ->  220 (176 a generar)
+
+Clase: P-1b
+  Originales: 96 -> Objetivo: 480
+  Augmentaciones a generar: 384
+    muy_pequeño :   24 ->  120 (96 a generar)
+    pequeño     :   24 ->  120 (96 a generar)
+    medio       :   24 ->  120 (96 a generar)
+    grande      :   24 ->  120 (96 a generar)
+
+Clase: P-1c
+  Originales: 50 -> Objetivo: 250
+  Augmentaciones a generar: 200
+    muy_pequeño :   13 ->   65 (52 a generar)
+    pequeño     :   12 ->   60 (48 a generar)
+    medio       :   13 ->   65 (52 a generar)
+    grande      :   12 ->   60 (48 a generar)
+
+Clase: P-20b
+  Originales: 178 -> Objetivo: 890
+  Augmentaciones a generar: 712
+    muy_pequeño :   45 ->  225 (180 a generar)
+    pequeño     :   44 ->  220 (176 a generar)
+    medio       :   45 ->  225 (180 a generar)
+    grande      :   44 ->  220 (176 a generar)
+
+Clase: P-21a
+  Originales: 111 -> Objetivo: 555
+  Augmentaciones a generar: 444
+    muy_pequeño :   28 ->  140 (112 a generar)
+    pequeño     :   28 ->  140 (112 a generar)
+    medio       :   28 ->  140 (112 a generar)
+    grande      :   27 ->  135 (108 a generar)
+
+Clase: P-3
+  Originales: 67 -> Objetivo: 335
+  Augmentaciones a generar: 268
+    muy_pequeño :   17 ->   85 (68 a generar)
+    pequeño     :   17 ->   85 (68 a generar)
+    medio       :   17 ->   85 (68 a generar)
+    grande      :   16 ->   80 (64 a generar)
+
+Clase: P-4
+  Originales: 387 -> Objetivo: 1935
+  Augmentaciones a generar: 1548
+    muy_pequeño :   97 ->  485 (388 a generar)
+    pequeño     :   97 ->  485 (388 a generar)
+    medio       :   97 ->  485 (388 a generar)
+    grande      :   96 ->  480 (384 a generar)
+
+Clase: P-9c
+  Originales: 1000 -> Objetivo: 5000
+  Augmentaciones a generar: 4000
+    muy_pequeño :  250 -> 1250 (1000 a generar)
+    pequeño     :  250 -> 1250 (1000 a generar)
+    medio       :  250 -> 1250 (1000 a generar)
+    grande      :  250 -> 1250 (1000 a generar)
+
+Clase: PDP
+  Originales: 868 -> Objetivo: 4340
+  Augmentaciones a generar: 3472
+    muy_pequeño :  217 -> 1085 (868 a generar)
+    pequeño     :  217 -> 1085 (868 a generar)
+    medio       :  217 -> 1085 (868 a generar)
+    grande      :  217 -> 1085 (868 a generar)
+
+Clase: R-1
+  Originales: 1000 -> Objetivo: 5000
+  Augmentaciones a generar: 4000
+    muy_pequeño :  250 -> 1250 (1000 a generar)
+    pequeño     :  250 -> 1250 (1000 a generar)
+    medio       :  250 -> 1250 (1000 a generar)
+    grande      :  250 -> 1250 (1000 a generar)
+
+Clase: R-100
+  Originales: 110 -> Objetivo: 550
+  Augmentaciones a generar: 440
+    muy_pequeño :   28 ->  140 (112 a generar)
+    pequeño     :   27 ->  135 (108 a generar)
+    medio       :   28 ->  140 (112 a generar)
+    grande      :   27 ->  135 (108 a generar)
+
+Clase: R-101
+  Originales: 1000 -> Objetivo: 5000
+  Augmentaciones a generar: 4000
+    muy_pequeño :  250 -> 1250 (1000 a generar)
+    pequeño     :  250 -> 1250 (1000 a generar)
+    medio       :  250 -> 1250 (1000 a generar)
+    grande      :  250 -> 1250 (1000 a generar)
+
+Clase: R-2
+  Originales: 627 -> Objetivo: 3135
+  Augmentaciones a generar: 2508
+    muy_pequeño :  157 ->  785 (628 a generar)
+    pequeño     :  157 ->  785 (628 a generar)
+    medio       :  157 ->  785 (628 a generar)
+    grande      :  156 ->  780 (624 a generar)
+
+Clase: R-301
+  Originales: 1000 -> Objetivo: 5000
+  Augmentaciones a generar: 4000
+    muy_pequeño :  250 -> 1250 (1000 a generar)
+    pequeño     :  250 -> 1250 (1000 a generar)
+    medio       :  250 -> 1250 (1000 a generar)
+    grande      :  250 -> 1250 (1000 a generar)
+
+Clase: R-302
+  Originales: 72 -> Objetivo: 360
+  Augmentaciones a generar: 288
+    muy_pequeño :   18 ->   90 (72 a generar)
+    pequeño     :   18 ->   90 (72 a generar)
+    medio       :   18 ->   90 (72 a generar)
+    grande      :   18 ->   90 (72 a generar)
+
+Clase: R-303
+  Originales: 56 -> Objetivo: 280
+  Augmentaciones a generar: 224
+    muy_pequeño :   14 ->   70 (56 a generar)
+    pequeño     :   14 ->   70 (56 a generar)
+    medio       :   14 ->   70 (56 a generar)
+    grande      :   14 ->   70 (56 a generar)
+
+Clase: R-304
+  Originales: 93 -> Objetivo: 465
+  Augmentaciones a generar: 372
+    muy_pequeño :   24 ->  120 (96 a generar)
+    pequeño     :   23 ->  115 (92 a generar)
+    medio       :   23 ->  115 (92 a generar)
+    grande      :   23 ->  115 (92 a generar)
+
+Clase: R-305
+  Originales: 637 -> Objetivo: 3185
+  Augmentaciones a generar: 2548
+    muy_pequeño :  160 ->  800 (640 a generar)
+    pequeño     :  159 ->  795 (636 a generar)
+    medio       :  159 ->  795 (636 a generar)
+    grande      :  159 ->  795 (636 a generar)
+
+Clase: R-308
+  Originales: 707 -> Objetivo: 3535
+  Augmentaciones a generar: 2828
+    muy_pequeño :  177 ->  885 (708 a generar)
+    pequeño     :  177 ->  885 (708 a generar)
+    medio       :  177 ->  885 (708 a generar)
+    grande      :  176 ->  880 (704 a generar)
+
+Clase: R-308c
+  Originales: 171 -> Objetivo: 855
+  Augmentaciones a generar: 684
+    muy_pequeño :   43 ->  215 (172 a generar)
+    pequeño     :   43 ->  215 (172 a generar)
+    medio       :   43 ->  215 (172 a generar)
+    grande      :   42 ->  210 (168 a generar)
+
+Clase: R-308d
+  Originales: 191 -> Objetivo: 955
+  Augmentaciones a generar: 764
+    muy_pequeño :   48 ->  240 (192 a generar)
+    pequeño     :   48 ->  240 (192 a generar)
+    medio       :   48 ->  240 (192 a generar)
+    grande      :   47 ->  235 (188 a generar)
+
+Clase: R-308e
+  Originales: 1000 -> Objetivo: 5000
+  Augmentaciones a generar: 4000
+    muy_pequeño :  250 -> 1250 (1000 a generar)
+    pequeño     :  250 -> 1250 (1000 a generar)
+    medio       :  250 -> 1250 (1000 a generar)
+    grande      :  250 -> 1250 (1000 a generar)
+
+Clase: R-308f
+  Originales: 420 -> Objetivo: 2100
+  Augmentaciones a generar: 1680
+    muy_pequeño :  105 ->  525 (420 a generar)
+    pequeño     :  105 ->  525 (420 a generar)
+    medio       :  105 ->  525 (420 a generar)
+    grande      :  105 ->  525 (420 a generar)
+
+Clase: R-308g
+  Originales: 70 -> Objetivo: 350
+  Augmentaciones a generar: 280
+    muy_pequeño :   18 ->   90 (72 a generar)
+    pequeño     :   17 ->   85 (68 a generar)
+    medio       :   18 ->   90 (72 a generar)
+    grande      :   17 ->   85 (68 a generar)
+
+Clase: R-308h
+  Originales: 79 -> Objetivo: 395
+  Augmentaciones a generar: 316
+    muy_pequeño :   20 ->  100 (80 a generar)
+    pequeño     :   20 ->  100 (80 a generar)
+    medio       :   20 ->  100 (80 a generar)
+    grande      :   19 ->   95 (76 a generar)
+
+Clase: R-400a
+  Originales: 221 -> Objetivo: 1105
+  Augmentaciones a generar: 884
+    muy_pequeño :   56 ->  280 (224 a generar)
+    pequeño     :   55 ->  275 (220 a generar)
+    medio       :   55 ->  275 (220 a generar)
+    grande      :   55 ->  275 (220 a generar)
+
+Clase: R-400b
+  Originales: 182 -> Objetivo: 910
+  Augmentaciones a generar: 728
+    muy_pequeño :   46 ->  230 (184 a generar)
+    pequeño     :   45 ->  225 (180 a generar)
+    medio       :   46 ->  230 (184 a generar)
+    grande      :   45 ->  225 (180 a generar)
+
+Clase: R-401a
+  Originales: 521 -> Objetivo: 2605
+  Augmentaciones a generar: 2084
+    muy_pequeño :  131 ->  655 (524 a generar)
+    pequeño     :  130 ->  650 (520 a generar)
+    medio       :  130 ->  650 (520 a generar)
+    grande      :  130 ->  650 (520 a generar)
+
+Clase: R-402
+  Originales: 857 -> Objetivo: 4285
+  Augmentaciones a generar: 3428
+    muy_pequeño :  215 -> 1075 (860 a generar)
+    pequeño     :  214 -> 1070 (856 a generar)
+    medio       :  214 -> 1070 (856 a generar)
+    grande      :  214 -> 1070 (856 a generar)
+
+Clase: R-502
+  Originales: 101 -> Objetivo: 505
+  Augmentaciones a generar: 404
+    muy_pequeño :   26 ->  130 (104 a generar)
+    pequeño     :   25 ->  125 (100 a generar)
+    medio       :   25 ->  125 (100 a generar)
+    grande      :   25 ->  125 (100 a generar)
+
+Clase: S-105a
+  Originales: 331 -> Objetivo: 1655
+  Augmentaciones a generar: 1324
+    muy_pequeño :   83 ->  415 (332 a generar)
+    pequeño     :   83 ->  415 (332 a generar)
+    medio       :   83 ->  415 (332 a generar)
+    grande      :   82 ->  410 (328 a generar)
+
+Clase: S-11
+  Originales: 138 -> Objetivo: 690
+  Augmentaciones a generar: 552
+    muy_pequeño :   35 ->  175 (140 a generar)
+    pequeño     :   34 ->  170 (136 a generar)
+    medio       :   35 ->  175 (140 a generar)
+    grande      :   34 ->  170 (136 a generar)
+
+Clase: S-13
+  Originales: 1000 -> Objetivo: 5000
+  Augmentaciones a generar: 4000
+    muy_pequeño :  250 -> 1250 (1000 a generar)
+    pequeño     :  250 -> 1250 (1000 a generar)
+    medio       :  250 -> 1250 (1000 a generar)
+    grande      :  250 -> 1250 (1000 a generar)
+
+Clase: S-17a
+  Originales: 228 -> Objetivo: 1140
+  Augmentaciones a generar: 912
+    muy_pequeño :   57 ->  285 (228 a generar)
+    pequeño     :   57 ->  285 (228 a generar)
+    medio       :   57 ->  285 (228 a generar)
+    grande      :   57 ->  285 (228 a generar)
+
+Clase: S-19
+  Originales: 121 -> Objetivo: 605
+  Augmentaciones a generar: 484
+    muy_pequeño :   31 ->  155 (124 a generar)
+    pequeño     :   30 ->  150 (120 a generar)
+    medio       :   30 ->  150 (120 a generar)
+    grande      :   30 ->  150 (120 a generar)
+
+Clase: S-200
+  Originales: 319 -> Objetivo: 1595
+  Augmentaciones a generar: 1276
+    muy_pequeño :   80 ->  400 (320 a generar)
+    pequeño     :   80 ->  400 (320 a generar)
+    medio       :   80 ->  400 (320 a generar)
+    grande      :   79 ->  395 (316 a generar)
+
+Clase: S-300
+  Originales: 457 -> Objetivo: 2285
+  Augmentaciones a generar: 1828
+    muy_pequeño :  115 ->  575 (460 a generar)
+    pequeño     :  114 ->  570 (456 a generar)
+    medio       :  114 ->  570 (456 a generar)
+    grande      :  114 ->  570 (456 a generar)
+
+Clase: S-348a
+  Originales: 101 -> Objetivo: 505
+  Augmentaciones a generar: 404
+    muy_pequeño :   26 ->  130 (104 a generar)
+    pequeño     :   25 ->  125 (100 a generar)
+    medio       :   25 ->  125 (100 a generar)
+    grande      :   25 ->  125 (100 a generar)
+
+Clase: S-400
+  Originales: 60 -> Objetivo: 300
+  Augmentaciones a generar: 240
+    muy_pequeño :   15 ->   75 (60 a generar)
+    pequeño     :   15 ->   75 (60 a generar)
+    medio       :   15 ->   75 (60 a generar)
+    grande      :   15 ->   75 (60 a generar)
+
+Clase: S-572
+  Originales: 188 -> Objetivo: 940
+  Augmentaciones a generar: 752
+    muy_pequeño :   47 ->  235 (188 a generar)
+    pequeño     :   47 ->  235 (188 a generar)
+    medio       :   47 ->  235 (188 a generar)
+    grande      :   47 ->  235 (188 a generar)
+
+Clase: S-600
+  Originales: 86 -> Objetivo: 430
+  Augmentaciones a generar: 344
+    muy_pequeño :   22 ->  110 (88 a generar)
+    pequeño     :   21 ->  105 (84 a generar)
+    medio       :   22 ->  110 (88 a generar)
+    grande      :   21 ->  105 (84 a generar)
+
+Clase: S-800
+  Originales: 140 -> Objetivo: 700
+  Augmentaciones a generar: 560
+    muy_pequeño :   35 ->  175 (140 a generar)
+    pequeño     :   35 ->  175 (140 a generar)
+    medio       :   35 ->  175 (140 a generar)
+    grande      :   35 ->  175 (140 a generar)
+
+Transformaciones recomendadas:
+  - Rotación: ±15°
+  - Flip horizontal (solo señales simétricas)
+  - Ajuste de brillo: ±20%
+  - Ajuste de contraste: ±15%
+  - Recorte aleatorio: 85-100% del área
+  - Desenfoque gaussiano: sigma 0.5-1.5
+  - Ruido gaussiano: sigma 5-15

@@ -35,14 +35,23 @@ CONFIG = {
 
     # Cantidad mínima y máxima de imágenes por clase
     "cantidad_minima": 50,
-    "cantidad_maxima": 1000,
+    "cantidad_maxima": 2000,
 
     # Tamaño máximo de imagen (según criterio elegido). None = sin límite
     "tamanio_maximo": 500,
 
-    # Factor de data augmentation recomendado por grupo de tamaño
-    # (multiplicador sobre las imágenes seleccionadas)
-    "augmentation_factor": 5,
+    # Modo de balanceo:
+    #   False -> Todas las clases se limitan a la clase más pequeña (balanceo estricto)
+    #   True  -> Cada clase usa todas sus imágenes hasta cantidad_maxima (balanceo independiente)
+    #            Usar class weights en el entrenamiento para compensar el desbalance
+    "balanceo_independiente": True,
+
+    # Data augmentation adaptativo:
+    #   "augmentation_objetivo" -> Mínimo de imágenes por clase tras augmentation
+    #                              Clases pequeñas reciben más augmentation que grandes
+    #   "augmentation_factor_max" -> Factor máximo permitido (evita sobre-augmentar)
+    "augmentation_objetivo": 500,
+    "augmentation_factor_max": 20,
 }
 
 # Nombres unificados para los 4 grupos de tamaño
@@ -203,23 +212,38 @@ def clasificar_y_balancear_clase(imagenes, objetivo_por_clase, tipo_clasificacio
     return seleccionados, cuotas_por_grupo
 
 
-def calcular_augmentation(resumen, factor):
-    """Calcula cuántas imágenes augmentadas se necesitan por clase y grupo.
+def calcular_augmentation(resumen, objetivo_augmentation, factor_max):
+    """Calcula augmentation ADAPTATIVO: cada clase recibe el factor que necesita.
+
+    Clases pequeñas reciben más augmentation para llegar al objetivo.
+    Clases grandes reciben poco o nada.
 
     Args:
         resumen: Lista de resultados del balanceo.
-        factor: Factor multiplicador de augmentation.
+        objetivo_augmentation: Mínimo de imágenes por clase tras augmentation.
+        factor_max: Factor máximo de augmentation permitido.
 
     Returns:
         Lista de dicts con información de augmentation por clase.
     """
+    import math
     resultado = []
     for entry in resumen:
+        originales = entry['total_balanceado']
+
+        # Calcular factor adaptativo: cuánto hay que multiplicar para llegar al objetivo
+        if originales > 0:
+            factor_necesario = math.ceil(objetivo_augmentation / originales)
+            factor = max(1, min(factor_necesario, factor_max))
+        else:
+            factor = 1
+
         clase_info = {
             'clase': entry['clase'],
-            'imagenes_originales': entry['total_balanceado'],
-            'imagenes_objetivo': entry['total_balanceado'] * factor,
-            'augmentaciones_necesarias': entry['total_balanceado'] * (factor - 1),
+            'imagenes_originales': originales,
+            'factor': factor,
+            'imagenes_objetivo': originales * factor,
+            'augmentaciones_necesarias': originales * (factor - 1),
             'por_grupo': {}
         }
         for nombre_grupo, datos in entry['grupos'].items():
@@ -231,6 +255,26 @@ def calcular_augmentation(resumen, factor):
             }
         resultado.append(clase_info)
     return resultado
+
+
+def calcular_class_weights(augmentation_info):
+    """Calcula class weights para compensar el desbalance en la loss function.
+
+    Fórmula: weight_i = total_muestras / (n_clases * muestras_clase_i)
+    Aplicar tras augmentation para que los pesos reflejen el dataset final.
+
+    Returns:
+        Dict {clase: peso} listo para usar en CrossEntropyLoss(weight=...).
+    """
+    # Usar las imágenes finales (tras augmentation)
+    muestras = {aug['clase']: aug['imagenes_objetivo'] for aug in augmentation_info}
+    total = sum(muestras.values())
+    n_clases = len(muestras)
+
+    if n_clases == 0 or total == 0:
+        return {}
+
+    return {clase: total / (n_clases * n) for clase, n in muestras.items()}
 
 
 # ============================================================
@@ -345,12 +389,20 @@ def recopilar_datos(conexion, config):
 # FASE 2: Calcular objetivo
 # ============================================================
 
-def calcular_objetivo(datos_clases, cantidad_maxima):
-    """Calcula el objetivo balanceado por clase."""
+def calcular_objetivo(datos_clases, cantidad_maxima, balanceo_independiente=False):
+    """Calcula el objetivo balanceado por clase.
+
+    Si balanceo_independiente=True, devuelve un dict con objetivo por clase.
+    Si balanceo_independiente=False, devuelve un int único para todas las clases.
+    """
     if not datos_clases:
-        return 0
-    clase_mas_pequena = min(len(imgs) for imgs in datos_clases.values())
-    return min(cantidad_maxima, clase_mas_pequena)
+        return 0 if not balanceo_independiente else {}
+
+    if balanceo_independiente:
+        return {clase: min(cantidad_maxima, len(imgs)) for clase, imgs in datos_clases.items()}
+    else:
+        clase_mas_pequena = min(len(imgs) for imgs in datos_clases.values())
+        return min(cantidad_maxima, clase_mas_pequena)
 
 
 # ============================================================
@@ -358,7 +410,11 @@ def calcular_objetivo(datos_clases, cantidad_maxima):
 # ============================================================
 
 def procesar_clases(conexion, datos_clases, objetivo_por_clase, config):
-    """Procesa todas las clases: clasifica, balancea y actualiza BD."""
+    """Procesa todas las clases: clasifica, balancea y actualiza BD.
+
+    objetivo_por_clase puede ser un int (mismo objetivo para todas) o un dict
+    {clase: objetivo} cuando balanceo_independiente=True.
+    """
     resumen = []
     criterio = config["criterio_tamanio"]
     tipo = config["tipo_clasificacion"]
@@ -367,6 +423,12 @@ def procesar_clases(conexion, datos_clases, objetivo_por_clase, config):
         medidas = [img['medida'] for img in imagenes]
         total_imagenes = len(imagenes)
 
+        # Obtener objetivo: del dict si es independiente, o el int global
+        if isinstance(objetivo_por_clase, dict):
+            objetivo_clase = objetivo_por_clase[nombre_clase]
+        else:
+            objetivo_clase = objetivo_por_clase
+
         logger.info(f"\n----------------------------")
         logger.info(f"{nombre_clase}")
         logger.info(f"  Total imágenes: {total_imagenes}")
@@ -374,10 +436,10 @@ def procesar_clases(conexion, datos_clases, objetivo_por_clase, config):
         logger.info(f"  {criterio.capitalize()} min: {min(medidas):.2f} | max: {max(medidas):.2f}")
 
         seleccionados, cuotas_por_grupo = clasificar_y_balancear_clase(
-            imagenes, objetivo_por_clase, tipo
+            imagenes, objetivo_clase, tipo
         )
 
-        logger.info(f"\n  Balanceando a {objetivo_por_clase} imágenes (tamaño + proyecto):")
+        logger.info(f"\n  Balanceando a {objetivo_clase} imágenes (tamaño + proyecto):")
         for i, nombre in enumerate(NOMBRES_GRUPOS):
             if cuotas_por_grupo[i]:
                 logger.info(
@@ -424,7 +486,7 @@ def procesar_clases(conexion, datos_clases, objetivo_por_clase, config):
 # FASE 5: Generar fichero de resultados
 # ============================================================
 
-def generar_fichero_resultados(resumen, config, augmentation_info=None):
+def generar_fichero_resultados(resumen, config, augmentation_info=None, class_weights=None):
     """Genera el fichero de resultados con el resumen del balanceo."""
     tipo = config["tipo_clasificacion"]
     criterio = config["criterio_tamanio"]
@@ -462,15 +524,20 @@ def generar_fichero_resultados(resumen, config, augmentation_info=None):
         f.write("=" * 60 + "\n")
         f.write(f"Total de clases analizadas: {len(resumen)}\n")
 
-        # Sección de data augmentation
+        # Sección de data augmentation adaptativo
         if augmentation_info:
             f.write("\n" + "=" * 60 + "\n")
-            f.write("DATA AUGMENTATION RECOMENDADO\n")
+            f.write("DATA AUGMENTATION ADAPTATIVO\n")
             f.write("=" * 60 + "\n\n")
-            f.write(f"Factor de augmentation: x{config['augmentation_factor']}\n\n")
+            f.write(f"Objetivo por clase: {config['augmentation_objetivo']} imágenes mínimo\n")
+            f.write(f"Factor máximo permitido: x{config['augmentation_factor_max']}\n\n")
+
+            total_originales = sum(a['imagenes_originales'] for a in augmentation_info)
+            total_final = sum(a['imagenes_objetivo'] for a in augmentation_info)
+            f.write(f"Total originales: {total_originales} -> Total con augmentation: {total_final}\n\n")
 
             for aug in augmentation_info:
-                f.write(f"Clase: {aug['clase']}\n")
+                f.write(f"Clase: {aug['clase']}  (x{aug['factor']})\n")
                 f.write(f"  Originales: {aug['imagenes_originales']} -> Objetivo: {aug['imagenes_objetivo']}\n")
                 f.write(f"  Augmentaciones a generar: {aug['augmentaciones_necesarias']}\n")
                 for nombre_grupo, datos in aug['por_grupo'].items():
@@ -485,6 +552,17 @@ def generar_fichero_resultados(resumen, config, augmentation_info=None):
             f.write("  - Recorte aleatorio: 85-100% del área\n")
             f.write("  - Desenfoque gaussiano: sigma 0.5-1.5\n")
             f.write("  - Ruido gaussiano: sigma 5-15\n")
+
+        # Sección de class weights
+        if class_weights:
+            f.write("\n" + "=" * 60 + "\n")
+            f.write("CLASS WEIGHTS PARA ENTRENAMIENTO\n")
+            f.write("=" * 60 + "\n\n")
+            f.write("Usar en la loss function para compensar el desbalance:\n")
+            f.write("  criterion = CrossEntropyLoss(weight=torch.tensor([...]))\n\n")
+
+            for clase, peso in sorted(class_weights.items()):
+                f.write(f"  {clase:12s}: {peso:.4f}\n")
 
     return nombre_fichero
 
@@ -506,7 +584,8 @@ def main(config=None):
     logger.info(f"Cantidad mínima: {config['cantidad_minima']}")
     logger.info(f"Cantidad máxima: {config['cantidad_maxima']}")
     logger.info(f"Tamaño máximo ({config['criterio_tamanio']}): {config['tamanio_maximo'] if config['tamanio_maximo'] else 'Sin límite'}")
-    logger.info(f"Factor augmentation: x{config['augmentation_factor']}")
+    logger.info(f"Balanceo independiente: {'Sí' if config['balanceo_independiente'] else 'No'}")
+    logger.info(f"Augmentation objetivo: {config['augmentation_objetivo']} imgs/clase (máx x{config['augmentation_factor_max']})")
 
     conexion = FisotecBaseDatos.conectarBaseDatos()
     crear_columna_tamanio(conexion)
@@ -519,27 +598,40 @@ def main(config=None):
         return
 
     # Fase 2: Calcular objetivo
-    objetivo_por_clase = calcular_objetivo(datos_clases, config["cantidad_maxima"])
+    independiente = config.get("balanceo_independiente", False)
+    objetivo_por_clase = calcular_objetivo(datos_clases, config["cantidad_maxima"], independiente)
+
+    clase_mas_pequena = min(len(imgs) for imgs in datos_clases.values())
     logger.info(f"\n{'='*60}")
     logger.info(f"Clases válidas: {len(datos_clases)}")
-    logger.info(f"Clase más pequeña: {min(len(imgs) for imgs in datos_clases.values())} imágenes")
-    logger.info(f"Objetivo balanceado por clase: {objetivo_por_clase} imágenes")
-    logger.info(f"Con augmentation x{config['augmentation_factor']}: {objetivo_por_clase * config['augmentation_factor']} imágenes/clase")
+    logger.info(f"Clase más pequeña: {clase_mas_pequena} imágenes")
+
+    if independiente:
+        total_imgs = sum(objetivo_por_clase.values())
+        logger.info(f"Modo: INDEPENDIENTE (cada clase usa todas sus imágenes, máx {config['cantidad_maxima']})")
+        logger.info(f"Total imágenes seleccionadas: {total_imgs}")
+    else:
+        logger.info(f"Modo: ESTRICTO (todas las clases limitadas a {objetivo_por_clase} imágenes)")
     logger.info(f"{'='*60}")
 
     # Fase 3-4: Clasificar, balancear y actualizar BD
     resumen = procesar_clases(conexion, datos_clases, objetivo_por_clase, config)
 
-    # Calcular data augmentation
-    augmentation_info = calcular_augmentation(resumen, config['augmentation_factor'])
+    # Calcular data augmentation adaptativo
+    augmentation_info = calcular_augmentation(
+        resumen, config['augmentation_objetivo'], config['augmentation_factor_max']
+    )
+
+    # Calcular class weights
+    class_weights = calcular_class_weights(augmentation_info)
 
     # Fase 5: Generar fichero de resultados
-    nombre_fichero = generar_fichero_resultados(resumen, config, augmentation_info)
+    nombre_fichero = generar_fichero_resultados(resumen, config, augmentation_info, class_weights)
 
     logger.info(f"\nFichero '{nombre_fichero}' generado correctamente.")
     logger.info("Terminamos el algoritmo")
 
-    return resumen, augmentation_info
+    return resumen, augmentation_info, class_weights
 
 
 if __name__ == '__main__':
