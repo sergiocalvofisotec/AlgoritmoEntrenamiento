@@ -8,6 +8,7 @@ generando un dataset equilibrado para entrenamiento.
 """
 
 import logging
+import random
 from fisotec_basedatos import FisotecBaseDatos
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
@@ -52,6 +53,12 @@ CONFIG = {
     #   "augmentation_factor_max" -> Factor máximo permitido (evita sobre-augmentar)
     "augmentation_objetivo": 500,
     "augmentation_factor_max": 20,
+
+    # Separación train/val/test:
+    #   Se divide ANTES del balanceo para evitar data leakage.
+    #   Augmentation solo se aplica al split de train.
+    #   Poner a None para desactivar la separación (comportamiento anterior).
+    "split_ratios": {"train": 0.70, "val": 0.15, "test": 0.15},
 }
 
 # Nombres unificados para los 4 grupos de tamaño
@@ -183,7 +190,11 @@ def balancear_por_proyecto(grupo, cuota_grupo):
 
     seleccion = []
     for proy, imgs in por_proyecto.items():
-        seleccion.extend(imgs[:cuotas_proy[proy]])
+        cuota = cuotas_proy[proy]
+        if cuota >= len(imgs):
+            seleccion.extend(imgs)
+        else:
+            seleccion.extend(random.sample(imgs, cuota))
 
     return seleccion, cuotas_proy
 
@@ -275,6 +286,56 @@ def calcular_class_weights(augmentation_info):
         return {}
 
     return {clase: total / (n_clases * n) for clase, n in muestras.items()}
+
+
+def separar_train_val_test(datos_clases, ratios):
+    """Separa las imágenes en train/val/test ANTES del balanceo.
+
+    Realiza un split estratificado por clase y proyecto para garantizar
+    que cada split tiene representación de todos los proyectos.
+
+    Args:
+        datos_clases: Dict {clase: [imagenes]} con todas las imágenes.
+        ratios: Dict {"train": 0.70, "val": 0.15, "test": 0.15}.
+
+    Returns:
+        Dict {"train": {clase: [imgs]}, "val": {clase: [imgs]}, "test": {clase: [imgs]}}
+    """
+    splits = {"train": {}, "val": {}, "test": {}}
+
+    for clase, imagenes in datos_clases.items():
+        # Agrupar por proyecto para split estratificado
+        por_proyecto = {}
+        for img in imagenes:
+            proy = img['proyecto']
+            if proy not in por_proyecto:
+                por_proyecto[proy] = []
+            por_proyecto[proy].append(img)
+
+        train_imgs = []
+        val_imgs = []
+        test_imgs = []
+
+        for proy, imgs in por_proyecto.items():
+            random.shuffle(imgs)
+            n = len(imgs)
+            n_train = int(n * ratios["train"])
+            n_val = int(n * ratios["val"])
+
+            train_imgs.extend(imgs[:n_train])
+            val_imgs.extend(imgs[n_train:n_train + n_val])
+            test_imgs.extend(imgs[n_train + n_val:])
+
+        # Ordenar por medida para mantener compatibilidad con clasificación
+        train_imgs.sort(key=lambda x: x['medida'])
+        val_imgs.sort(key=lambda x: x['medida'])
+        test_imgs.sort(key=lambda x: x['medida'])
+
+        splits["train"][clase] = train_imgs
+        splits["val"][clase] = val_imgs
+        splits["test"][clase] = test_imgs
+
+    return splits
 
 
 # ============================================================
@@ -486,7 +547,7 @@ def procesar_clases(conexion, datos_clases, objetivo_por_clase, config):
 # FASE 5: Generar fichero de resultados
 # ============================================================
 
-def generar_fichero_resultados(resumen, config, augmentation_info=None, class_weights=None):
+def generar_fichero_resultados(resumen, config, augmentation_info=None, class_weights=None, split_info=None):
     """Genera el fichero de resultados con el resumen del balanceo."""
     tipo = config["tipo_clasificacion"]
     criterio = config["criterio_tamanio"]
@@ -500,6 +561,29 @@ def generar_fichero_resultados(resumen, config, augmentation_info=None, class_we
     with open(nombre_fichero, 'w', encoding='utf-8') as f:
         f.write(f"{titulo}\n")
         f.write("=" * 60 + "\n\n")
+
+        # Sección de split train/val/test
+        if split_info:
+            split_ratios = config.get("split_ratios", {})
+            f.write("SEPARACIÓN TRAIN/VAL/TEST (pre-balanceo)\n")
+            f.write("-" * 40 + "\n")
+            f.write(f"Ratios: train={split_ratios['train']:.0%} / val={split_ratios['val']:.0%} / test={split_ratios['test']:.0%}\n")
+            f.write(f"Split estratificado por clase y proyecto\n")
+            f.write(f"Augmentation aplicado SOLO a train\n\n")
+
+            total_t = sum(s['train'] for s in split_info.values())
+            total_v = sum(s['val'] for s in split_info.values())
+            total_te = sum(s['test'] for s in split_info.values())
+            total_all = sum(s['total'] for s in split_info.values())
+            f.write(f"  {'Clase':12s}  {'Total':>6s}  {'Train':>6s}  {'Val':>5s}  {'Test':>5s}\n")
+            f.write(f"  {'-'*12}  {'-'*6}  {'-'*6}  {'-'*5}  {'-'*5}\n")
+            for clase, info in sorted(split_info.items()):
+                f.write(f"  {clase:12s}  {info['total']:6d}  {info['train']:6d}  {info['val']:5d}  {info['test']:5d}\n")
+            f.write(f"  {'-'*12}  {'-'*6}  {'-'*6}  {'-'*5}  {'-'*5}\n")
+            f.write(f"  {'TOTAL':12s}  {total_all:6d}  {total_t:6d}  {total_v:5d}  {total_te:5d}\n")
+            f.write("\n" + "=" * 60 + "\n\n")
+            f.write("BALANCEO (aplicado sobre split TRAIN)\n")
+            f.write("=" * 60 + "\n\n")
 
         for entry in resumen:
             nombre_clase = entry['clase']
@@ -576,6 +660,7 @@ def main(config=None):
     if config is None:
         config = CONFIG
 
+    random.seed(42)
     logger.info("Inicio de algoritmo unificado")
     logger.info(f"Tipo de clasificación: {config['tipo_clasificacion']}")
     logger.info(f"Criterio de tamaño: {config['criterio_tamanio']}")
@@ -587,6 +672,12 @@ def main(config=None):
     logger.info(f"Balanceo independiente: {'Sí' if config['balanceo_independiente'] else 'No'}")
     logger.info(f"Augmentation objetivo: {config['augmentation_objetivo']} imgs/clase (máx x{config['augmentation_factor_max']})")
 
+    split_ratios = config.get("split_ratios")
+    if split_ratios:
+        logger.info(f"Split train/val/test: {split_ratios['train']:.0%} / {split_ratios['val']:.0%} / {split_ratios['test']:.0%}")
+    else:
+        logger.info("Split train/val/test: Desactivado")
+
     conexion = FisotecBaseDatos.conectarBaseDatos()
     crear_columna_tamanio(conexion)
 
@@ -597,14 +688,41 @@ def main(config=None):
         logger.info("No se encontraron clases válidas.")
         return
 
-    # Fase 2: Calcular objetivo
-    independiente = config.get("balanceo_independiente", False)
-    objetivo_por_clase = calcular_objetivo(datos_clases, config["cantidad_maxima"], independiente)
+    # Fase 1.5: Separar train/val/test ANTES del balanceo
+    split_info = None
+    if split_ratios:
+        splits = separar_train_val_test(datos_clases, split_ratios)
+        split_info = {}
+        for clase in datos_clases:
+            split_info[clase] = {
+                'total': len(datos_clases[clase]),
+                'train': len(splits["train"][clase]),
+                'val': len(splits["val"][clase]),
+                'test': len(splits["test"][clase]),
+            }
+        logger.info(f"\n{'='*60}")
+        logger.info("SEPARACIÓN TRAIN/VAL/TEST (pre-balanceo)")
+        total_train = sum(s['train'] for s in split_info.values())
+        total_val = sum(s['val'] for s in split_info.values())
+        total_test = sum(s['test'] for s in split_info.values())
+        logger.info(f"  Train: {total_train} imágenes")
+        logger.info(f"  Val:   {total_val} imágenes")
+        logger.info(f"  Test:  {total_test} imágenes")
+        logger.info(f"{'='*60}")
 
-    clase_mas_pequena = min(len(imgs) for imgs in datos_clases.values())
+        # El balanceo y augmentation se aplican solo a train
+        datos_clases_balanceo = splits["train"]
+    else:
+        datos_clases_balanceo = datos_clases
+
+    # Fase 2: Calcular objetivo (sobre train si hay split)
+    independiente = config.get("balanceo_independiente", False)
+    objetivo_por_clase = calcular_objetivo(datos_clases_balanceo, config["cantidad_maxima"], independiente)
+
+    clase_mas_pequena = min(len(imgs) for imgs in datos_clases_balanceo.values())
     logger.info(f"\n{'='*60}")
-    logger.info(f"Clases válidas: {len(datos_clases)}")
-    logger.info(f"Clase más pequeña: {clase_mas_pequena} imágenes")
+    logger.info(f"Clases válidas: {len(datos_clases_balanceo)}")
+    logger.info(f"Clase más pequeña{' (train)' if split_ratios else ''}: {clase_mas_pequena} imágenes")
 
     if independiente:
         total_imgs = sum(objetivo_por_clase.values())
@@ -614,19 +732,21 @@ def main(config=None):
         logger.info(f"Modo: ESTRICTO (todas las clases limitadas a {objetivo_por_clase} imágenes)")
     logger.info(f"{'='*60}")
 
-    # Fase 3-4: Clasificar, balancear y actualizar BD
-    resumen = procesar_clases(conexion, datos_clases, objetivo_por_clase, config)
+    # Fase 3-4: Clasificar, balancear y actualizar BD (solo train si hay split)
+    resumen = procesar_clases(conexion, datos_clases_balanceo, objetivo_por_clase, config)
 
-    # Calcular data augmentation adaptativo
+    # Calcular data augmentation adaptativo (solo sobre train)
     augmentation_info = calcular_augmentation(
         resumen, config['augmentation_objetivo'], config['augmentation_factor_max']
     )
 
-    # Calcular class weights
+    # Calcular class weights (basados en train + augmentation)
     class_weights = calcular_class_weights(augmentation_info)
 
     # Fase 5: Generar fichero de resultados
-    nombre_fichero = generar_fichero_resultados(resumen, config, augmentation_info, class_weights)
+    nombre_fichero = generar_fichero_resultados(
+        resumen, config, augmentation_info, class_weights, split_info
+    )
 
     logger.info(f"\nFichero '{nombre_fichero}' generado correctamente.")
     logger.info("Terminamos el algoritmo")

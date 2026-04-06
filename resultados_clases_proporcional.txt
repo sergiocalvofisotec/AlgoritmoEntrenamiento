@@ -4,7 +4,7 @@ RESUMEN DE CLASES - DISTRIBUCIÓN PROPORCIONAL
 Clase: BCV  (total: 837 -> balanceado: 837 imágenes)
 ----------------------------------------
   muy_pequeño :  210 imágenes  |  altura: 1.00 - 23.00
-  pequeño     :  209 imágenes  |  altura: 23.00 - 53.00
+  pequeño     :  209 imágenes  |  altura: 23.00 - 52.00
   medio       :  209 imágenes  |  altura: 53.00 - 63.08
   grande      :  209 imágenes  |  altura: 77.00 - 447.00
 
@@ -22,8 +22,8 @@ Clase: P-1  (total: 241 -> balanceado: 241 imágenes)
 Clase: P-13a  (total: 111 -> balanceado: 111 imágenes)
 ----------------------------------------
   muy_pequeño :   28 imágenes  |  altura: 7.00 - 27.00
-  pequeño     :   28 imágenes  |  altura: 29.00 - 38.00
-  medio       :   28 imágenes  |  altura: 38.00 - 46.00
+  pequeño     :   28 imágenes  |  altura: 29.00 - 37.00
+  medio       :   28 imágenes  |  altura: 38.00 - 58.00
   grande      :   27 imágenes  |  altura: 63.00 - 109.00
 
   >> Grupo con menos imágenes: GRANDE (27 imágenes)
@@ -37,14 +37,14 @@ Clase: P-13b  (total: 130 -> balanceado: 130 imágenes)
 
   >> Grupo con menos imágenes: PEQUEÑO (32 imágenes)
 
-Clase: P-15a  (total: 1075 -> balanceado: 1000 imágenes)
+Clase: P-15a  (total: 1075 -> balanceado: 1075 imágenes)
 ----------------------------------------
-  muy_pequeño :  250 imágenes  |  altura: 6.50 - 31.00
-  pequeño     :  250 imágenes  |  altura: 32.00 - 45.00
-  medio       :  250 imágenes  |  altura: 45.00 - 72.00
-  grande      :  250 imágenes  |  altura: 77.00 - 92.00
+  muy_pequeño :  269 imágenes  |  altura: 6.50 - 31.00
+  pequeño     :  269 imágenes  |  altura: 32.00 - 45.00
+  medio       :  269 imágenes  |  altura: 45.00 - 72.00
+  grande      :  268 imágenes  |  altura: 77.00 - 92.00
 
-  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
+  >> Grupo con menos imágenes: GRANDE (268 imágenes)
 
 Clase: P-1a  (total: 178 -> balanceado: 178 imágenes)
 ----------------------------------------
@@ -109,14 +109,14 @@ Clase: P-4  (total: 387 -> balanceado: 387 imágenes)
 
   >> Grupo con menos imágenes: GRANDE (96 imágenes)
 
-Clase: P-9c  (total: 1206 -> balanceado: 1000 imágenes)
+Clase: P-9c  (total: 1206 -> balanceado: 1206 imágenes)
 ----------------------------------------
-  muy_pequeño :  250 imágenes  |  altura: 7.92 - 33.00
-  pequeño     :  250 imágenes  |  altura: 34.75 - 99.00
-  medio       :  250 imágenes  |  altura: 102.00 - 188.00
-  grande      :  250 imágenes  |  altura: 188.00 - 487.00
+  muy_pequeño :  302 imágenes  |  altura: 7.92 - 33.00
+  pequeño     :  301 imágenes  |  altura: 34.75 - 99.00
+  medio       :  302 imágenes  |  altura: 102.00 - 188.00
+  grande      :  301 imágenes  |  altura: 188.00 - 487.00
 
-  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (301 imágenes)
 
 Clase: PDP  (total: 868 -> balanceado: 868 imágenes)
 ----------------------------------------
@@ -127,14 +127,14 @@ Clase: PDP  (total: 868 -> balanceado: 868 imágenes)
 
   >> Grupo con menos imágenes: MUY_PEQUEÑO (217 imágenes)
 
-Clase: R-1  (total: 1828 -> balanceado: 1000 imágenes)
+Clase: R-1  (total: 1828 -> balanceado: 1828 imágenes)
 ----------------------------------------
-  muy_pequeño :  250 imágenes  |  altura: 4.25 - 26.00
-  pequeño     :  250 imágenes  |  altura: 26.00 - 45.00
-  medio       :  250 imágenes  |  altura: 46.00 - 79.50
-  grande      :  250 imágenes  |  altura: 88.00 - 493.00
+  muy_pequeño :  457 imágenes  |  altura: 4.25 - 25.00
+  pequeño     :  457 imágenes  |  altura: 26.00 - 46.00
+  medio       :  457 imágenes  |  altura: 46.00 - 79.50
+  grande      :  457 imágenes  |  altura: 88.00 - 493.00
 
-  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (457 imágenes)
 
 Clase: R-100  (total: 110 -> balanceado: 110 imágenes)
 ----------------------------------------
@@ -145,14 +145,14 @@ Clase: R-100  (total: 110 -> balanceado: 110 imágenes)
 
   >> Grupo con menos imágenes: PEQUEÑO (27 imágenes)
 
-Clase: R-101  (total: 1772 -> balanceado: 1000 imágenes)
+Clase: R-101  (total: 1772 -> balanceado: 1772 imágenes)
 ----------------------------------------
-  muy_pequeño :  250 imágenes  |  altura: 3.75 - 15.00
-  pequeño     :  250 imágenes  |  altura: 15.50 - 32.00
-  medio       :  250 imágenes  |  altura: 33.00 - 61.00
-  grande      :  250 imágenes  |  altura: 61.00 - 342.00
+  muy_pequeño :  443 imágenes  |  altura: 3.75 - 15.00
+  pequeño     :  443 imágenes  |  altura: 15.50 - 32.00
+  medio       :  443 imágenes  |  altura: 33.00 - 61.00
+  grande      :  443 imágenes  |  altura: 61.00 - 422.00
 
-  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (443 imágenes)
 
 Clase: R-2  (total: 627 -> balanceado: 627 imágenes)
 ----------------------------------------
@@ -163,14 +163,14 @@ Clase: R-2  (total: 627 -> balanceado: 627 imágenes)
 
   >> Grupo con menos imágenes: GRANDE (156 imágenes)
 
-Clase: R-301  (total: 2263 -> balanceado: 1000 imágenes)
+Clase: R-301  (total: 2263 -> balanceado: 2000 imágenes)
 ----------------------------------------
-  muy_pequeño :  250 imágenes  |  altura: 3.75 - 16.00
-  pequeño     :  250 imágenes  |  altura: 17.00 - 31.00
-  medio       :  250 imágenes  |  altura: 34.00 - 42.00
-  grande      :  250 imágenes  |  altura: 61.00 - 71.31
+  muy_pequeño :  500 imágenes  |  altura: 3.75 - 16.00
+  pequeño     :  500 imágenes  |  altura: 17.00 - 34.00
+  medio       :  500 imágenes  |  altura: 34.00 - 60.00
+  grande      :  500 imágenes  |  altura: 61.00 - 71.31
 
-  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (500 imágenes)
 
 Clase: R-302  (total: 72 -> balanceado: 72 imágenes)
 ----------------------------------------
@@ -211,8 +211,8 @@ Clase: R-305  (total: 637 -> balanceado: 637 imágenes)
 Clase: R-308  (total: 707 -> balanceado: 707 imágenes)
 ----------------------------------------
   muy_pequeño :  177 imágenes  |  altura: 4.75 - 40.00
-  pequeño     :  177 imágenes  |  altura: 40.00 - 45.43
-  medio       :  177 imágenes  |  altura: 67.00 - 118.00
+  pequeño     :  177 imágenes  |  altura: 40.00 - 67.00
+  medio       :  177 imágenes  |  altura: 67.00 - 120.00
   grande      :  176 imágenes  |  altura: 121.00 - 482.00
 
   >> Grupo con menos imágenes: GRANDE (176 imágenes)
@@ -221,7 +221,7 @@ Clase: R-308c  (total: 171 -> balanceado: 171 imágenes)
 ----------------------------------------
   muy_pequeño :   43 imágenes  |  altura: 28.00 - 58.00
   pequeño     :   43 imágenes  |  altura: 60.00 - 88.00
-  medio       :   43 imágenes  |  altura: 88.00 - 153.00
+  medio       :   43 imágenes  |  altura: 88.00 - 118.00
   grande      :   42 imágenes  |  altura: 154.00 - 305.00
 
   >> Grupo con menos imágenes: GRANDE (42 imágenes)
@@ -235,19 +235,19 @@ Clase: R-308d  (total: 191 -> balanceado: 191 imágenes)
 
   >> Grupo con menos imágenes: GRANDE (47 imágenes)
 
-Clase: R-308e  (total: 1482 -> balanceado: 1000 imágenes)
+Clase: R-308e  (total: 1482 -> balanceado: 1482 imágenes)
 ----------------------------------------
-  muy_pequeño :  250 imágenes  |  altura: 7.00 - 84.00
-  pequeño     :  250 imágenes  |  altura: 84.00 - 100.00
-  medio       :  250 imágenes  |  altura: 110.00 - 130.00
-  grande      :  250 imágenes  |  altura: 156.00 - 252.00
+  muy_pequeño :  371 imágenes  |  altura: 7.00 - 84.00
+  pequeño     :  370 imágenes  |  altura: 84.00 - 100.00
+  medio       :  371 imágenes  |  altura: 110.00 - 155.00
+  grande      :  370 imágenes  |  altura: 156.00 - 471.00
 
-  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
+  >> Grupo con menos imágenes: PEQUEÑO (370 imágenes)
 
 Clase: R-308f  (total: 420 -> balanceado: 420 imágenes)
 ----------------------------------------
   muy_pequeño :  105 imágenes  |  altura: 6.94 - 36.00
-  pequeño     :  105 imágenes  |  altura: 36.00 - 51.00
+  pequeño     :  105 imágenes  |  altura: 36.00 - 37.00
   medio       :  105 imágenes  |  altura: 53.00 - 63.89
   grande      :  105 imágenes  |  altura: 82.00 - 94.00
 
@@ -300,9 +300,9 @@ Clase: R-401a  (total: 521 -> balanceado: 521 imágenes)
 
 Clase: R-402  (total: 857 -> balanceado: 857 imágenes)
 ----------------------------------------
-  muy_pequeño :  215 imágenes  |  altura: 4.75 - 18.00
+  muy_pequeño :  215 imágenes  |  altura: 4.75 - 17.00
   pequeño     :  214 imágenes  |  altura: 18.00 - 37.00
-  medio       :  214 imágenes  |  altura: 37.00 - 71.00
+  medio       :  214 imágenes  |  altura: 37.00 - 73.00
   grande      :  214 imágenes  |  altura: 74.00 - 84.58
 
   >> Grupo con menos imágenes: PEQUEÑO (214 imágenes)
@@ -320,8 +320,8 @@ Clase: S-105a  (total: 331 -> balanceado: 331 imágenes)
 ----------------------------------------
   muy_pequeño :   83 imágenes  |  altura: 7.00 - 34.00
   pequeño     :   83 imágenes  |  altura: 38.00 - 59.67
-  medio       :   83 imágenes  |  altura: 64.00 - 84.00
-  grande      :   82 imágenes  |  altura: 101.00 - 316.00
+  medio       :   83 imágenes  |  altura: 64.00 - 101.00
+  grande      :   82 imágenes  |  altura: 101.00 - 243.00
 
   >> Grupo con menos imágenes: GRANDE (82 imágenes)
 
@@ -334,14 +334,14 @@ Clase: S-11  (total: 138 -> balanceado: 138 imágenes)
 
   >> Grupo con menos imágenes: PEQUEÑO (34 imágenes)
 
-Clase: S-13  (total: 1608 -> balanceado: 1000 imágenes)
+Clase: S-13  (total: 1608 -> balanceado: 1608 imágenes)
 ----------------------------------------
-  muy_pequeño :  250 imágenes  |  altura: 4.50 - 26.00
-  pequeño     :  250 imágenes  |  altura: 26.00 - 38.00
-  medio       :  250 imágenes  |  altura: 38.00 - 60.59
-  grande      :  250 imágenes  |  altura: 64.00 - 67.43
+  muy_pequeño :  402 imágenes  |  altura: 4.50 - 26.00
+  pequeño     :  402 imágenes  |  altura: 26.00 - 37.00
+  medio       :  402 imágenes  |  altura: 38.00 - 60.59
+  grande      :  402 imágenes  |  altura: 64.00 - 67.43
 
-  >> Grupo con menos imágenes: MUY_PEQUEÑO (250 imágenes)
+  >> Grupo con menos imágenes: MUY_PEQUEÑO (402 imágenes)
 
 Clase: S-17a  (total: 228 -> balanceado: 228 imágenes)
 ----------------------------------------
@@ -419,8 +419,8 @@ Clase: S-800  (total: 140 -> balanceado: 140 imágenes)
 ----------------------------------------
   muy_pequeño :   35 imágenes  |  altura: 3.75 - 10.87
   pequeño     :   35 imágenes  |  altura: 12.86 - 25.00
-  medio       :   35 imágenes  |  altura: 27.00 - 38.00
-  grande      :   35 imágenes  |  altura: 38.00 - 96.00
+  medio       :   35 imágenes  |  altura: 27.00 - 37.00
+  grande      :   35 imágenes  |  altura: 38.00 - 117.00
 
   >> Grupo con menos imágenes: MUY_PEQUEÑO (35 imágenes)
 
@@ -428,28 +428,31 @@ Clase: S-800  (total: 140 -> balanceado: 140 imágenes)
 Total de clases analizadas: 47
 
 ============================================================
-DATA AUGMENTATION RECOMENDADO
+DATA AUGMENTATION ADAPTATIVO
 ============================================================
 
-Factor de augmentation: x5
+Objetivo por clase: 500 imágenes mínimo
+Factor máximo permitido: x20
 
-Clase: BCV
-  Originales: 837 -> Objetivo: 4185
-  Augmentaciones a generar: 3348
-    muy_pequeño :  210 -> 1050 (840 a generar)
-    pequeño     :  209 -> 1045 (836 a generar)
-    medio       :  209 -> 1045 (836 a generar)
-    grande      :  209 -> 1045 (836 a generar)
+Total originales: 21509 -> Total con augmentation: 35441
 
-Clase: P-1
-  Originales: 241 -> Objetivo: 1205
-  Augmentaciones a generar: 964
-    muy_pequeño :   61 ->  305 (244 a generar)
-    pequeño     :   60 ->  300 (240 a generar)
-    medio       :   60 ->  300 (240 a generar)
-    grande      :   60 ->  300 (240 a generar)
+Clase: BCV  (x1)
+  Originales: 837 -> Objetivo: 837
+  Augmentaciones a generar: 0
+    muy_pequeño :  210 ->  210 (0 a generar)
+    pequeño     :  209 ->  209 (0 a generar)
+    medio       :  209 ->  209 (0 a generar)
+    grande      :  209 ->  209 (0 a generar)
 
-Clase: P-13a
+Clase: P-1  (x3)
+  Originales: 241 -> Objetivo: 723
+  Augmentaciones a generar: 482
+    muy_pequeño :   61 ->  183 (122 a generar)
+    pequeño     :   60 ->  180 (120 a generar)
+    medio       :   60 ->  180 (120 a generar)
+    grande      :   60 ->  180 (120 a generar)
+
+Clase: P-13a  (x5)
   Originales: 111 -> Objetivo: 555
   Augmentaciones a generar: 444
     muy_pequeño :   28 ->  140 (112 a generar)
@@ -457,55 +460,55 @@ Clase: P-13a
     medio       :   28 ->  140 (112 a generar)
     grande      :   27 ->  135 (108 a generar)
 
-Clase: P-13b
-  Originales: 130 -> Objetivo: 650
-  Augmentaciones a generar: 520
-    muy_pequeño :   33 ->  165 (132 a generar)
-    pequeño     :   32 ->  160 (128 a generar)
-    medio       :   33 ->  165 (132 a generar)
-    grande      :   32 ->  160 (128 a generar)
+Clase: P-13b  (x4)
+  Originales: 130 -> Objetivo: 520
+  Augmentaciones a generar: 390
+    muy_pequeño :   33 ->  132 (99 a generar)
+    pequeño     :   32 ->  128 (96 a generar)
+    medio       :   33 ->  132 (99 a generar)
+    grande      :   32 ->  128 (96 a generar)
 
-Clase: P-15a
-  Originales: 1000 -> Objetivo: 5000
-  Augmentaciones a generar: 4000
-    muy_pequeño :  250 -> 1250 (1000 a generar)
-    pequeño     :  250 -> 1250 (1000 a generar)
-    medio       :  250 -> 1250 (1000 a generar)
-    grande      :  250 -> 1250 (1000 a generar)
+Clase: P-15a  (x1)
+  Originales: 1075 -> Objetivo: 1075
+  Augmentaciones a generar: 0
+    muy_pequeño :  269 ->  269 (0 a generar)
+    pequeño     :  269 ->  269 (0 a generar)
+    medio       :  269 ->  269 (0 a generar)
+    grande      :  268 ->  268 (0 a generar)
 
-Clase: P-1a
-  Originales: 178 -> Objetivo: 890
-  Augmentaciones a generar: 712
-    muy_pequeño :   45 ->  225 (180 a generar)
-    pequeño     :   44 ->  220 (176 a generar)
-    medio       :   45 ->  225 (180 a generar)
-    grande      :   44 ->  220 (176 a generar)
+Clase: P-1a  (x3)
+  Originales: 178 -> Objetivo: 534
+  Augmentaciones a generar: 356
+    muy_pequeño :   45 ->  135 (90 a generar)
+    pequeño     :   44 ->  132 (88 a generar)
+    medio       :   45 ->  135 (90 a generar)
+    grande      :   44 ->  132 (88 a generar)
 
-Clase: P-1b
-  Originales: 96 -> Objetivo: 480
-  Augmentaciones a generar: 384
-    muy_pequeño :   24 ->  120 (96 a generar)
-    pequeño     :   24 ->  120 (96 a generar)
-    medio       :   24 ->  120 (96 a generar)
-    grande      :   24 ->  120 (96 a generar)
+Clase: P-1b  (x6)
+  Originales: 96 -> Objetivo: 576
+  Augmentaciones a generar: 480
+    muy_pequeño :   24 ->  144 (120 a generar)
+    pequeño     :   24 ->  144 (120 a generar)
+    medio       :   24 ->  144 (120 a generar)
+    grande      :   24 ->  144 (120 a generar)
 
-Clase: P-1c
-  Originales: 50 -> Objetivo: 250
-  Augmentaciones a generar: 200
-    muy_pequeño :   13 ->   65 (52 a generar)
-    pequeño     :   12 ->   60 (48 a generar)
-    medio       :   13 ->   65 (52 a generar)
-    grande      :   12 ->   60 (48 a generar)
+Clase: P-1c  (x10)
+  Originales: 50 -> Objetivo: 500
+  Augmentaciones a generar: 450
+    muy_pequeño :   13 ->  130 (117 a generar)
+    pequeño     :   12 ->  120 (108 a generar)
+    medio       :   13 ->  130 (117 a generar)
+    grande      :   12 ->  120 (108 a generar)
 
-Clase: P-20b
-  Originales: 178 -> Objetivo: 890
-  Augmentaciones a generar: 712
-    muy_pequeño :   45 ->  225 (180 a generar)
-    pequeño     :   44 ->  220 (176 a generar)
-    medio       :   45 ->  225 (180 a generar)
-    grande      :   44 ->  220 (176 a generar)
+Clase: P-20b  (x3)
+  Originales: 178 -> Objetivo: 534
+  Augmentaciones a generar: 356
+    muy_pequeño :   45 ->  135 (90 a generar)
+    pequeño     :   44 ->  132 (88 a generar)
+    medio       :   45 ->  135 (90 a generar)
+    grande      :   44 ->  132 (88 a generar)
 
-Clase: P-21a
+Clase: P-21a  (x5)
   Originales: 111 -> Objetivo: 555
   Augmentaciones a generar: 444
     muy_pequeño :   28 ->  140 (112 a generar)
@@ -513,47 +516,47 @@ Clase: P-21a
     medio       :   28 ->  140 (112 a generar)
     grande      :   27 ->  135 (108 a generar)
 
-Clase: P-3
-  Originales: 67 -> Objetivo: 335
-  Augmentaciones a generar: 268
-    muy_pequeño :   17 ->   85 (68 a generar)
-    pequeño     :   17 ->   85 (68 a generar)
-    medio       :   17 ->   85 (68 a generar)
-    grande      :   16 ->   80 (64 a generar)
+Clase: P-3  (x8)
+  Originales: 67 -> Objetivo: 536
+  Augmentaciones a generar: 469
+    muy_pequeño :   17 ->  136 (119 a generar)
+    pequeño     :   17 ->  136 (119 a generar)
+    medio       :   17 ->  136 (119 a generar)
+    grande      :   16 ->  128 (112 a generar)
 
-Clase: P-4
-  Originales: 387 -> Objetivo: 1935
-  Augmentaciones a generar: 1548
-    muy_pequeño :   97 ->  485 (388 a generar)
-    pequeño     :   97 ->  485 (388 a generar)
-    medio       :   97 ->  485 (388 a generar)
-    grande      :   96 ->  480 (384 a generar)
+Clase: P-4  (x2)
+  Originales: 387 -> Objetivo: 774
+  Augmentaciones a generar: 387
+    muy_pequeño :   97 ->  194 (97 a generar)
+    pequeño     :   97 ->  194 (97 a generar)
+    medio       :   97 ->  194 (97 a generar)
+    grande      :   96 ->  192 (96 a generar)
 
-Clase: P-9c
-  Originales: 1000 -> Objetivo: 5000
-  Augmentaciones a generar: 4000
-    muy_pequeño :  250 -> 1250 (1000 a generar)
-    pequeño     :  250 -> 1250 (1000 a generar)
-    medio       :  250 -> 1250 (1000 a generar)
-    grande      :  250 -> 1250 (1000 a generar)
+Clase: P-9c  (x1)
+  Originales: 1206 -> Objetivo: 1206
+  Augmentaciones a generar: 0
+    muy_pequeño :  302 ->  302 (0 a generar)
+    pequeño     :  301 ->  301 (0 a generar)
+    medio       :  302 ->  302 (0 a generar)
+    grande      :  301 ->  301 (0 a generar)
 
-Clase: PDP
-  Originales: 868 -> Objetivo: 4340
-  Augmentaciones a generar: 3472
-    muy_pequeño :  217 -> 1085 (868 a generar)
-    pequeño     :  217 -> 1085 (868 a generar)
-    medio       :  217 -> 1085 (868 a generar)
-    grande      :  217 -> 1085 (868 a generar)
+Clase: PDP  (x1)
+  Originales: 868 -> Objetivo: 868
+  Augmentaciones a generar: 0
+    muy_pequeño :  217 ->  217 (0 a generar)
+    pequeño     :  217 ->  217 (0 a generar)
+    medio       :  217 ->  217 (0 a generar)
+    grande      :  217 ->  217 (0 a generar)
 
-Clase: R-1
-  Originales: 1000 -> Objetivo: 5000
-  Augmentaciones a generar: 4000
-    muy_pequeño :  250 -> 1250 (1000 a generar)
-    pequeño     :  250 -> 1250 (1000 a generar)
-    medio       :  250 -> 1250 (1000 a generar)
-    grande      :  250 -> 1250 (1000 a generar)
+Clase: R-1  (x1)
+  Originales: 1828 -> Objetivo: 1828
+  Augmentaciones a generar: 0
+    muy_pequeño :  457 ->  457 (0 a generar)
+    pequeño     :  457 ->  457 (0 a generar)
+    medio       :  457 ->  457 (0 a generar)
+    grande      :  457 ->  457 (0 a generar)
 
-Clase: R-100
+Clase: R-100  (x5)
   Originales: 110 -> Objetivo: 550
   Augmentaciones a generar: 440
     muy_pequeño :   28 ->  140 (112 a generar)
@@ -561,151 +564,151 @@ Clase: R-100
     medio       :   28 ->  140 (112 a generar)
     grande      :   27 ->  135 (108 a generar)
 
-Clase: R-101
-  Originales: 1000 -> Objetivo: 5000
-  Augmentaciones a generar: 4000
-    muy_pequeño :  250 -> 1250 (1000 a generar)
-    pequeño     :  250 -> 1250 (1000 a generar)
-    medio       :  250 -> 1250 (1000 a generar)
-    grande      :  250 -> 1250 (1000 a generar)
+Clase: R-101  (x1)
+  Originales: 1772 -> Objetivo: 1772
+  Augmentaciones a generar: 0
+    muy_pequeño :  443 ->  443 (0 a generar)
+    pequeño     :  443 ->  443 (0 a generar)
+    medio       :  443 ->  443 (0 a generar)
+    grande      :  443 ->  443 (0 a generar)
 
-Clase: R-2
-  Originales: 627 -> Objetivo: 3135
-  Augmentaciones a generar: 2508
-    muy_pequeño :  157 ->  785 (628 a generar)
-    pequeño     :  157 ->  785 (628 a generar)
-    medio       :  157 ->  785 (628 a generar)
-    grande      :  156 ->  780 (624 a generar)
+Clase: R-2  (x1)
+  Originales: 627 -> Objetivo: 627
+  Augmentaciones a generar: 0
+    muy_pequeño :  157 ->  157 (0 a generar)
+    pequeño     :  157 ->  157 (0 a generar)
+    medio       :  157 ->  157 (0 a generar)
+    grande      :  156 ->  156 (0 a generar)
 
-Clase: R-301
-  Originales: 1000 -> Objetivo: 5000
-  Augmentaciones a generar: 4000
-    muy_pequeño :  250 -> 1250 (1000 a generar)
-    pequeño     :  250 -> 1250 (1000 a generar)
-    medio       :  250 -> 1250 (1000 a generar)
-    grande      :  250 -> 1250 (1000 a generar)
+Clase: R-301  (x1)
+  Originales: 2000 -> Objetivo: 2000
+  Augmentaciones a generar: 0
+    muy_pequeño :  500 ->  500 (0 a generar)
+    pequeño     :  500 ->  500 (0 a generar)
+    medio       :  500 ->  500 (0 a generar)
+    grande      :  500 ->  500 (0 a generar)
 
-Clase: R-302
-  Originales: 72 -> Objetivo: 360
-  Augmentaciones a generar: 288
-    muy_pequeño :   18 ->   90 (72 a generar)
-    pequeño     :   18 ->   90 (72 a generar)
-    medio       :   18 ->   90 (72 a generar)
-    grande      :   18 ->   90 (72 a generar)
+Clase: R-302  (x7)
+  Originales: 72 -> Objetivo: 504
+  Augmentaciones a generar: 432
+    muy_pequeño :   18 ->  126 (108 a generar)
+    pequeño     :   18 ->  126 (108 a generar)
+    medio       :   18 ->  126 (108 a generar)
+    grande      :   18 ->  126 (108 a generar)
 
-Clase: R-303
-  Originales: 56 -> Objetivo: 280
-  Augmentaciones a generar: 224
-    muy_pequeño :   14 ->   70 (56 a generar)
-    pequeño     :   14 ->   70 (56 a generar)
-    medio       :   14 ->   70 (56 a generar)
-    grande      :   14 ->   70 (56 a generar)
+Clase: R-303  (x9)
+  Originales: 56 -> Objetivo: 504
+  Augmentaciones a generar: 448
+    muy_pequeño :   14 ->  126 (112 a generar)
+    pequeño     :   14 ->  126 (112 a generar)
+    medio       :   14 ->  126 (112 a generar)
+    grande      :   14 ->  126 (112 a generar)
 
-Clase: R-304
-  Originales: 93 -> Objetivo: 465
-  Augmentaciones a generar: 372
-    muy_pequeño :   24 ->  120 (96 a generar)
-    pequeño     :   23 ->  115 (92 a generar)
-    medio       :   23 ->  115 (92 a generar)
-    grande      :   23 ->  115 (92 a generar)
+Clase: R-304  (x6)
+  Originales: 93 -> Objetivo: 558
+  Augmentaciones a generar: 465
+    muy_pequeño :   24 ->  144 (120 a generar)
+    pequeño     :   23 ->  138 (115 a generar)
+    medio       :   23 ->  138 (115 a generar)
+    grande      :   23 ->  138 (115 a generar)
 
-Clase: R-305
-  Originales: 637 -> Objetivo: 3185
-  Augmentaciones a generar: 2548
-    muy_pequeño :  160 ->  800 (640 a generar)
-    pequeño     :  159 ->  795 (636 a generar)
-    medio       :  159 ->  795 (636 a generar)
-    grande      :  159 ->  795 (636 a generar)
+Clase: R-305  (x1)
+  Originales: 637 -> Objetivo: 637
+  Augmentaciones a generar: 0
+    muy_pequeño :  160 ->  160 (0 a generar)
+    pequeño     :  159 ->  159 (0 a generar)
+    medio       :  159 ->  159 (0 a generar)
+    grande      :  159 ->  159 (0 a generar)
 
-Clase: R-308
-  Originales: 707 -> Objetivo: 3535
-  Augmentaciones a generar: 2828
-    muy_pequeño :  177 ->  885 (708 a generar)
-    pequeño     :  177 ->  885 (708 a generar)
-    medio       :  177 ->  885 (708 a generar)
-    grande      :  176 ->  880 (704 a generar)
+Clase: R-308  (x1)
+  Originales: 707 -> Objetivo: 707
+  Augmentaciones a generar: 0
+    muy_pequeño :  177 ->  177 (0 a generar)
+    pequeño     :  177 ->  177 (0 a generar)
+    medio       :  177 ->  177 (0 a generar)
+    grande      :  176 ->  176 (0 a generar)
 
-Clase: R-308c
-  Originales: 171 -> Objetivo: 855
-  Augmentaciones a generar: 684
-    muy_pequeño :   43 ->  215 (172 a generar)
-    pequeño     :   43 ->  215 (172 a generar)
-    medio       :   43 ->  215 (172 a generar)
-    grande      :   42 ->  210 (168 a generar)
+Clase: R-308c  (x3)
+  Originales: 171 -> Objetivo: 513
+  Augmentaciones a generar: 342
+    muy_pequeño :   43 ->  129 (86 a generar)
+    pequeño     :   43 ->  129 (86 a generar)
+    medio       :   43 ->  129 (86 a generar)
+    grande      :   42 ->  126 (84 a generar)
 
-Clase: R-308d
-  Originales: 191 -> Objetivo: 955
-  Augmentaciones a generar: 764
-    muy_pequeño :   48 ->  240 (192 a generar)
-    pequeño     :   48 ->  240 (192 a generar)
-    medio       :   48 ->  240 (192 a generar)
-    grande      :   47 ->  235 (188 a generar)
+Clase: R-308d  (x3)
+  Originales: 191 -> Objetivo: 573
+  Augmentaciones a generar: 382
+    muy_pequeño :   48 ->  144 (96 a generar)
+    pequeño     :   48 ->  144 (96 a generar)
+    medio       :   48 ->  144 (96 a generar)
+    grande      :   47 ->  141 (94 a generar)
 
-Clase: R-308e
-  Originales: 1000 -> Objetivo: 5000
-  Augmentaciones a generar: 4000
-    muy_pequeño :  250 -> 1250 (1000 a generar)
-    pequeño     :  250 -> 1250 (1000 a generar)
-    medio       :  250 -> 1250 (1000 a generar)
-    grande      :  250 -> 1250 (1000 a generar)
+Clase: R-308e  (x1)
+  Originales: 1482 -> Objetivo: 1482
+  Augmentaciones a generar: 0
+    muy_pequeño :  371 ->  371 (0 a generar)
+    pequeño     :  370 ->  370 (0 a generar)
+    medio       :  371 ->  371 (0 a generar)
+    grande      :  370 ->  370 (0 a generar)
 
-Clase: R-308f
-  Originales: 420 -> Objetivo: 2100
-  Augmentaciones a generar: 1680
-    muy_pequeño :  105 ->  525 (420 a generar)
-    pequeño     :  105 ->  525 (420 a generar)
-    medio       :  105 ->  525 (420 a generar)
-    grande      :  105 ->  525 (420 a generar)
+Clase: R-308f  (x2)
+  Originales: 420 -> Objetivo: 840
+  Augmentaciones a generar: 420
+    muy_pequeño :  105 ->  210 (105 a generar)
+    pequeño     :  105 ->  210 (105 a generar)
+    medio       :  105 ->  210 (105 a generar)
+    grande      :  105 ->  210 (105 a generar)
 
-Clase: R-308g
-  Originales: 70 -> Objetivo: 350
-  Augmentaciones a generar: 280
-    muy_pequeño :   18 ->   90 (72 a generar)
-    pequeño     :   17 ->   85 (68 a generar)
-    medio       :   18 ->   90 (72 a generar)
-    grande      :   17 ->   85 (68 a generar)
+Clase: R-308g  (x8)
+  Originales: 70 -> Objetivo: 560
+  Augmentaciones a generar: 490
+    muy_pequeño :   18 ->  144 (126 a generar)
+    pequeño     :   17 ->  136 (119 a generar)
+    medio       :   18 ->  144 (126 a generar)
+    grande      :   17 ->  136 (119 a generar)
 
-Clase: R-308h
-  Originales: 79 -> Objetivo: 395
-  Augmentaciones a generar: 316
-    muy_pequeño :   20 ->  100 (80 a generar)
-    pequeño     :   20 ->  100 (80 a generar)
-    medio       :   20 ->  100 (80 a generar)
-    grande      :   19 ->   95 (76 a generar)
+Clase: R-308h  (x7)
+  Originales: 79 -> Objetivo: 553
+  Augmentaciones a generar: 474
+    muy_pequeño :   20 ->  140 (120 a generar)
+    pequeño     :   20 ->  140 (120 a generar)
+    medio       :   20 ->  140 (120 a generar)
+    grande      :   19 ->  133 (114 a generar)
 
-Clase: R-400a
-  Originales: 221 -> Objetivo: 1105
-  Augmentaciones a generar: 884
-    muy_pequeño :   56 ->  280 (224 a generar)
-    pequeño     :   55 ->  275 (220 a generar)
-    medio       :   55 ->  275 (220 a generar)
-    grande      :   55 ->  275 (220 a generar)
+Clase: R-400a  (x3)
+  Originales: 221 -> Objetivo: 663
+  Augmentaciones a generar: 442
+    muy_pequeño :   56 ->  168 (112 a generar)
+    pequeño     :   55 ->  165 (110 a generar)
+    medio       :   55 ->  165 (110 a generar)
+    grande      :   55 ->  165 (110 a generar)
 
-Clase: R-400b
-  Originales: 182 -> Objetivo: 910
-  Augmentaciones a generar: 728
-    muy_pequeño :   46 ->  230 (184 a generar)
-    pequeño     :   45 ->  225 (180 a generar)
-    medio       :   46 ->  230 (184 a generar)
-    grande      :   45 ->  225 (180 a generar)
+Clase: R-400b  (x3)
+  Originales: 182 -> Objetivo: 546
+  Augmentaciones a generar: 364
+    muy_pequeño :   46 ->  138 (92 a generar)
+    pequeño     :   45 ->  135 (90 a generar)
+    medio       :   46 ->  138 (92 a generar)
+    grande      :   45 ->  135 (90 a generar)
 
-Clase: R-401a
-  Originales: 521 -> Objetivo: 2605
-  Augmentaciones a generar: 2084
-    muy_pequeño :  131 ->  655 (524 a generar)
-    pequeño     :  130 ->  650 (520 a generar)
-    medio       :  130 ->  650 (520 a generar)
-    grande      :  130 ->  650 (520 a generar)
+Clase: R-401a  (x1)
+  Originales: 521 -> Objetivo: 521
+  Augmentaciones a generar: 0
+    muy_pequeño :  131 ->  131 (0 a generar)
+    pequeño     :  130 ->  130 (0 a generar)
+    medio       :  130 ->  130 (0 a generar)
+    grande      :  130 ->  130 (0 a generar)
 
-Clase: R-402
-  Originales: 857 -> Objetivo: 4285
-  Augmentaciones a generar: 3428
-    muy_pequeño :  215 -> 1075 (860 a generar)
-    pequeño     :  214 -> 1070 (856 a generar)
-    medio       :  214 -> 1070 (856 a generar)
-    grande      :  214 -> 1070 (856 a generar)
+Clase: R-402  (x1)
+  Originales: 857 -> Objetivo: 857
+  Augmentaciones a generar: 0
+    muy_pequeño :  215 ->  215 (0 a generar)
+    pequeño     :  214 ->  214 (0 a generar)
+    medio       :  214 ->  214 (0 a generar)
+    grande      :  214 ->  214 (0 a generar)
 
-Clase: R-502
+Clase: R-502  (x5)
   Originales: 101 -> Objetivo: 505
   Augmentaciones a generar: 404
     muy_pequeño :   26 ->  130 (104 a generar)
@@ -713,39 +716,39 @@ Clase: R-502
     medio       :   25 ->  125 (100 a generar)
     grande      :   25 ->  125 (100 a generar)
 
-Clase: S-105a
-  Originales: 331 -> Objetivo: 1655
-  Augmentaciones a generar: 1324
-    muy_pequeño :   83 ->  415 (332 a generar)
-    pequeño     :   83 ->  415 (332 a generar)
-    medio       :   83 ->  415 (332 a generar)
-    grande      :   82 ->  410 (328 a generar)
+Clase: S-105a  (x2)
+  Originales: 331 -> Objetivo: 662
+  Augmentaciones a generar: 331
+    muy_pequeño :   83 ->  166 (83 a generar)
+    pequeño     :   83 ->  166 (83 a generar)
+    medio       :   83 ->  166 (83 a generar)
+    grande      :   82 ->  164 (82 a generar)
 
-Clase: S-11
-  Originales: 138 -> Objetivo: 690
-  Augmentaciones a generar: 552
-    muy_pequeño :   35 ->  175 (140 a generar)
-    pequeño     :   34 ->  170 (136 a generar)
-    medio       :   35 ->  175 (140 a generar)
-    grande      :   34 ->  170 (136 a generar)
+Clase: S-11  (x4)
+  Originales: 138 -> Objetivo: 552
+  Augmentaciones a generar: 414
+    muy_pequeño :   35 ->  140 (105 a generar)
+    pequeño     :   34 ->  136 (102 a generar)
+    medio       :   35 ->  140 (105 a generar)
+    grande      :   34 ->  136 (102 a generar)
 
-Clase: S-13
-  Originales: 1000 -> Objetivo: 5000
-  Augmentaciones a generar: 4000
-    muy_pequeño :  250 -> 1250 (1000 a generar)
-    pequeño     :  250 -> 1250 (1000 a generar)
-    medio       :  250 -> 1250 (1000 a generar)
-    grande      :  250 -> 1250 (1000 a generar)
+Clase: S-13  (x1)
+  Originales: 1608 -> Objetivo: 1608
+  Augmentaciones a generar: 0
+    muy_pequeño :  402 ->  402 (0 a generar)
+    pequeño     :  402 ->  402 (0 a generar)
+    medio       :  402 ->  402 (0 a generar)
+    grande      :  402 ->  402 (0 a generar)
 
-Clase: S-17a
-  Originales: 228 -> Objetivo: 1140
-  Augmentaciones a generar: 912
-    muy_pequeño :   57 ->  285 (228 a generar)
-    pequeño     :   57 ->  285 (228 a generar)
-    medio       :   57 ->  285 (228 a generar)
-    grande      :   57 ->  285 (228 a generar)
+Clase: S-17a  (x3)
+  Originales: 228 -> Objetivo: 684
+  Augmentaciones a generar: 456
+    muy_pequeño :   57 ->  171 (114 a generar)
+    pequeño     :   57 ->  171 (114 a generar)
+    medio       :   57 ->  171 (114 a generar)
+    grande      :   57 ->  171 (114 a generar)
 
-Clase: S-19
+Clase: S-19  (x5)
   Originales: 121 -> Objetivo: 605
   Augmentaciones a generar: 484
     muy_pequeño :   31 ->  155 (124 a generar)
@@ -753,23 +756,23 @@ Clase: S-19
     medio       :   30 ->  150 (120 a generar)
     grande      :   30 ->  150 (120 a generar)
 
-Clase: S-200
-  Originales: 319 -> Objetivo: 1595
-  Augmentaciones a generar: 1276
-    muy_pequeño :   80 ->  400 (320 a generar)
-    pequeño     :   80 ->  400 (320 a generar)
-    medio       :   80 ->  400 (320 a generar)
-    grande      :   79 ->  395 (316 a generar)
+Clase: S-200  (x2)
+  Originales: 319 -> Objetivo: 638
+  Augmentaciones a generar: 319
+    muy_pequeño :   80 ->  160 (80 a generar)
+    pequeño     :   80 ->  160 (80 a generar)
+    medio       :   80 ->  160 (80 a generar)
+    grande      :   79 ->  158 (79 a generar)
 
-Clase: S-300
-  Originales: 457 -> Objetivo: 2285
-  Augmentaciones a generar: 1828
-    muy_pequeño :  115 ->  575 (460 a generar)
-    pequeño     :  114 ->  570 (456 a generar)
-    medio       :  114 ->  570 (456 a generar)
-    grande      :  114 ->  570 (456 a generar)
+Clase: S-300  (x2)
+  Originales: 457 -> Objetivo: 914
+  Augmentaciones a generar: 457
+    muy_pequeño :  115 ->  230 (115 a generar)
+    pequeño     :  114 ->  228 (114 a generar)
+    medio       :  114 ->  228 (114 a generar)
+    grande      :  114 ->  228 (114 a generar)
 
-Clase: S-348a
+Clase: S-348a  (x5)
   Originales: 101 -> Objetivo: 505
   Augmentaciones a generar: 404
     muy_pequeño :   26 ->  130 (104 a generar)
@@ -777,37 +780,37 @@ Clase: S-348a
     medio       :   25 ->  125 (100 a generar)
     grande      :   25 ->  125 (100 a generar)
 
-Clase: S-400
-  Originales: 60 -> Objetivo: 300
-  Augmentaciones a generar: 240
-    muy_pequeño :   15 ->   75 (60 a generar)
-    pequeño     :   15 ->   75 (60 a generar)
-    medio       :   15 ->   75 (60 a generar)
-    grande      :   15 ->   75 (60 a generar)
+Clase: S-400  (x9)
+  Originales: 60 -> Objetivo: 540
+  Augmentaciones a generar: 480
+    muy_pequeño :   15 ->  135 (120 a generar)
+    pequeño     :   15 ->  135 (120 a generar)
+    medio       :   15 ->  135 (120 a generar)
+    grande      :   15 ->  135 (120 a generar)
 
-Clase: S-572
-  Originales: 188 -> Objetivo: 940
-  Augmentaciones a generar: 752
-    muy_pequeño :   47 ->  235 (188 a generar)
-    pequeño     :   47 ->  235 (188 a generar)
-    medio       :   47 ->  235 (188 a generar)
-    grande      :   47 ->  235 (188 a generar)
+Clase: S-572  (x3)
+  Originales: 188 -> Objetivo: 564
+  Augmentaciones a generar: 376
+    muy_pequeño :   47 ->  141 (94 a generar)
+    pequeño     :   47 ->  141 (94 a generar)
+    medio       :   47 ->  141 (94 a generar)
+    grande      :   47 ->  141 (94 a generar)
 
-Clase: S-600
-  Originales: 86 -> Objetivo: 430
-  Augmentaciones a generar: 344
-    muy_pequeño :   22 ->  110 (88 a generar)
-    pequeño     :   21 ->  105 (84 a generar)
-    medio       :   22 ->  110 (88 a generar)
-    grande      :   21 ->  105 (84 a generar)
+Clase: S-600  (x6)
+  Originales: 86 -> Objetivo: 516
+  Augmentaciones a generar: 430
+    muy_pequeño :   22 ->  132 (110 a generar)
+    pequeño     :   21 ->  126 (105 a generar)
+    medio       :   22 ->  132 (110 a generar)
+    grande      :   21 ->  126 (105 a generar)
 
-Clase: S-800
-  Originales: 140 -> Objetivo: 700
-  Augmentaciones a generar: 560
-    muy_pequeño :   35 ->  175 (140 a generar)
-    pequeño     :   35 ->  175 (140 a generar)
-    medio       :   35 ->  175 (140 a generar)
-    grande      :   35 ->  175 (140 a generar)
+Clase: S-800  (x4)
+  Originales: 140 -> Objetivo: 560
+  Augmentaciones a generar: 420
+    muy_pequeño :   35 ->  140 (105 a generar)
+    pequeño     :   35 ->  140 (105 a generar)
+    medio       :   35 ->  140 (105 a generar)
+    grande      :   35 ->  140 (105 a generar)
 
 Transformaciones recomendadas:
   - Rotación: ±15°
@@ -817,3 +820,58 @@ Transformaciones recomendadas:
   - Recorte aleatorio: 85-100% del área
   - Desenfoque gaussiano: sigma 0.5-1.5
   - Ruido gaussiano: sigma 5-15
+
+============================================================
+CLASS WEIGHTS PARA ENTRENAMIENTO
+============================================================
+
+Usar en la loss function para compensar el desbalance:
+  criterion = CrossEntropyLoss(weight=torch.tensor([...]))
+
+  BCV         : 0.9009
+  P-1         : 1.0430
+  P-13a       : 1.3587
+  P-13b       : 1.4501
+  P-15a       : 0.7015
+  P-1a        : 1.4121
+  P-1b        : 1.3091
+  P-1c        : 1.5081
+  P-20b       : 1.4121
+  P-21a       : 1.3587
+  P-3         : 1.4068
+  P-4         : 0.9742
+  P-9c        : 0.6253
+  PDP         : 0.8687
+  R-1         : 0.4125
+  R-100       : 1.3710
+  R-101       : 0.4255
+  R-2         : 1.2027
+  R-301       : 0.3770
+  R-302       : 1.4962
+  R-303       : 1.4962
+  R-304       : 1.3514
+  R-305       : 1.1838
+  R-308       : 1.0666
+  R-308c      : 1.4699
+  R-308d      : 1.3160
+  R-308e      : 0.5088
+  R-308f      : 0.8977
+  R-308g      : 1.3465
+  R-308h      : 1.3636
+  R-400a      : 1.1374
+  R-400b      : 1.3811
+  R-401a      : 1.4473
+  R-402       : 0.8799
+  R-502       : 1.4932
+  S-105a      : 1.1391
+  S-11        : 1.3661
+  S-13        : 0.4689
+  S-17a       : 1.1024
+  S-19        : 1.2464
+  S-200       : 1.1819
+  S-300       : 0.8250
+  S-348a      : 1.4932
+  S-400       : 1.3964
+  S-572       : 1.3370
+  S-600       : 1.4614
+  S-800       : 1.3465
