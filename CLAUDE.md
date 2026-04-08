@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 python algoritmo.py
 
 # Run all tests (no DB needed - pure functions only)
-python -m unittest test_algoritmo -v       # 95 original tests
+python -m unittest test_algoritmo -v       # 100 original tests
 python -m unittest test_mejoras_dataset -v  # 26 improvement tests
 
 # Run a single test class

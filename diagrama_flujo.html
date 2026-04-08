@@ -148,7 +148,7 @@ flowchart TD
         LOOP_GRP["Para cada grupo: muy_pequeno,<br/>pequeno, medio, grande"]:::logica
         BAL_PROY["balancear_por_proyecto()<br/>Reparte cuota entre proyectos<br/>Redistribuye si uno no tiene suficientes"]:::logica
 
-        UPDATE["actualizar_tamanio_bd()<br/>UPDATE seniales_verticales<br/>SET tamanio = %s WHERE id = %s"]:::bd
+        UPDATE["actualizar_tamanio_bd_batch()<br/>UPDATE seniales_verticales<br/>SET tamanio = %s WHERE id = ANY(%s)<br/>1 query por grupo en vez de 1 por imagen"]:::bd
 
         RESUMEN["Construir resumen:<br/>clase, total, total_balanceado,<br/>grupos, grupo_minimo"]:::logica
 

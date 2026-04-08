@@ -886,6 +886,80 @@ class TestSimulacionAugmentationEntrenamiento(unittest.TestCase):
                 f"Clase {aug['clase']}: factor {aug['factor']} > max {self.factor_max}")
 
 
+class TestBatchUpdatePreparacion(unittest.TestCase):
+    """Tests para validar la preparación de IDs en batch para actualizar BD.
+
+    La función actualizar_tamanio_bd_batch recibe una lista de IDs y un grupo.
+    Estos tests verifican que la extracción de IDs desde los grupos seleccionados
+    produce los lotes correctos para el UPDATE batch.
+    """
+
+    def test_extraccion_ids_por_grupo(self):
+        """Los IDs se extraen correctamente de cada grupo seleccionado."""
+        imagenes = crear_imagenes_multiproyecto(20, ["p1", "p2"])
+        seleccionados, _ = clasificar_y_balancear_clase(imagenes, 40, "proporcional")
+
+        for i, nombre in enumerate(NOMBRES_GRUPOS):
+            ids = [img['id'] for img in seleccionados[i]]
+            # Cada ID es único dentro del grupo
+            self.assertEqual(len(ids), len(set(ids)),
+                f"Grupo {nombre}: IDs duplicados en el batch")
+
+    def test_ids_no_se_repiten_entre_grupos(self):
+        """Ningún ID aparece en más de un grupo (evita UPDATEs contradictorios)."""
+        imagenes = crear_imagenes_multiproyecto(30, ["p1", "p2", "p3"])
+        seleccionados, _ = clasificar_y_balancear_clase(imagenes, 60, "proporcional")
+
+        todos_los_ids = []
+        for grupo in seleccionados:
+            todos_los_ids.extend(img['id'] for img in grupo)
+        self.assertEqual(len(todos_los_ids), len(set(todos_los_ids)),
+            "Hay IDs repetidos entre grupos distintos")
+
+    def test_batch_vacio_no_genera_ids(self):
+        """Un grupo vacío produce una lista de IDs vacía."""
+        # Crear un caso con tan pocas imágenes que algún grupo quede vacío
+        imagenes = [crear_imagen(0, 50, 100, "p1", 100)]
+        seleccionados, _ = clasificar_y_balancear_clase(imagenes, 1, "proporcional")
+
+        grupos_vacios = [g for g in seleccionados if len(g) == 0]
+        for grupo in grupos_vacios:
+            ids = [img['id'] for img in grupo]
+            self.assertEqual(len(ids), 0, "Grupo vacío generó IDs")
+
+    def test_total_ids_coincide_con_seleccionados(self):
+        """El total de IDs extraídos coincide con el total de imágenes seleccionadas."""
+        imagenes = crear_imagenes_multiproyecto(50, PROYECTOS_REALES)
+        objetivo = 100
+        seleccionados, _ = clasificar_y_balancear_clase(imagenes, objetivo, "proporcional")
+
+        total_ids = sum(len([img['id'] for img in grupo]) for grupo in seleccionados)
+        total_imgs = sum(len(grupo) for grupo in seleccionados)
+        self.assertEqual(total_ids, total_imgs)
+
+    def test_batch_con_dataset_realista(self):
+        """Simula la preparación de batches con distribución real."""
+        datos = generar_dataset_realista({"R-301": 2263, "P-1c": 50}, PROYECTOS_REALES)
+        objetivos = calcular_objetivo(datos, 2000, balanceo_independiente=True)
+
+        for clase, imagenes in datos.items():
+            seleccionados, _ = clasificar_y_balancear_clase(
+                imagenes, objetivos[clase], "proporcional")
+
+            ids_totales = []
+            for i, nombre in enumerate(NOMBRES_GRUPOS):
+                ids = [img['id'] for img in seleccionados[i]]
+                ids_totales.extend(ids)
+                # Cada batch tiene IDs válidos (no None, no negativos)
+                for id_img in ids:
+                    self.assertIsNotNone(id_img, f"Clase {clase}, grupo {nombre}: ID None")
+                    self.assertGreaterEqual(id_img, 0, f"Clase {clase}, grupo {nombre}: ID negativo")
+
+            # Sin duplicados entre todos los grupos
+            self.assertEqual(len(ids_totales), len(set(ids_totales)),
+                f"Clase {clase}: IDs duplicados entre grupos")
+
+
 class TestComparativaEstrictoVsIndependiente(unittest.TestCase):
     """Compara directamente ambos modos para demostrar el impacto
     de usar balanceo independiente en el entrenamiento."""

@@ -24,7 +24,7 @@ AlgoritmoEntrenamiento/
 ├── fisotec_basedatos.py                  # Clase FisotecBaseDatos — conexión y operaciones PostgreSQL
 ├── fisotec_utils.py                      # Clase FisotecUtils — utilidades generales (originaria del plugin QGIS)
 ├── credenciales.py                       # Constantes de conexión a BD (excluido de git)
-├── test_algoritmo.py                     # 95 tests unitarios (19 clases de test)
+├── test_algoritmo.py                     # 100 tests unitarios (20 clases de test)
 ├── test_mejoras_dataset.py               # 26 tests de mejoras del dataset (6 clases de test)
 ├── informe_mejoras_dataset.txt           # Análisis de 5 mejoras identificadas para el dataset
 ├── diagrama_flujo.html                   # Diagrama de flujo interactivo del algoritmo (Mermaid)
@@ -41,7 +41,7 @@ AlgoritmoEntrenamiento/
 | `fisotec_basedatos.py` | Clase `FisotecBaseDatos` con métodos estáticos para conectar, consultar, insertar, modificar y eliminar datos en PostgreSQL vía `psycopg2`. Originaria del framework Fisotec |
 | `fisotec_utils.py` | Clase `FisotecUtils` con utilidades generales: formateo de datos para SQL, validaciones, manejo de fechas, colores aleatorios. Originaria del plugin QGIS de Fisotec |
 | `credenciales.py` | Define constantes `DBHOST`, `DBNAME`, `DBPORT`, `DBUSER`, `DBPASSWORD` para la conexión a PostgreSQL local |
-| `test_algoritmo.py` | Suite de 95 tests unitarios que validan todas las funciones puras del algoritmo sin necesidad de conexión a BD |
+| `test_algoritmo.py` | Suite de 100 tests unitarios que validan todas las funciones puras del algoritmo sin necesidad de conexión a BD |
 | `test_mejoras_dataset.py` | Suite de 26 tests que validan las mejoras del dataset: sesgo de selección, split train/val/test, granularidad de grupos y filtros de calidad |
 | `informe_mejoras_dataset.txt` | Informe con 5 mejoras identificadas para optimizar la calidad del dataset, con análisis de impacto y prioridad |
 | `diagrama_flujo.html` | Diagrama de flujo interactivo con Mermaid que visualiza las 5 fases del algoritmo |
@@ -111,7 +111,7 @@ El algoritmo no está encapsulado en una clase, sino en funciones modulares impo
 | `crear_columna_tamanio(conexion)` | Añade la columna `tamaño` a la tabla si no existe |
 | `obtener_clases(conexion, proyectos)` | Obtiene las clases disponibles, filtradas por proyecto |
 | `obtener_imagenes_clase(conexion, clase, ...)` | Consulta imágenes de una clase con filtros de proyecto y tamaño |
-| `actualizar_tamanio_bd(conexion, id, grupo)` | Escribe el grupo de tamaño asignado a cada imagen en BD |
+| `actualizar_tamanio_bd_batch(conexion, ids, grupo)` | Actualiza el grupo de tamaño de múltiples imágenes en una sola query batch (`WHERE id = ANY(%s)`) |
 
 **Orquestación (fases del pipeline):**
 
@@ -180,10 +180,10 @@ Todos los parámetros se definen en el diccionario `CONFIG` al inicio de `algori
 ### Ejecutar los tests
 
 ```bash
-# Todos los tests (121 tests)
+# Todos los tests (126 tests)
 python -m unittest test_algoritmo test_mejoras_dataset -v
 
-# Solo tests del algoritmo (95 tests, 19 clases)
+# Solo tests del algoritmo (100 tests, 20 clases)
 python -m unittest test_algoritmo -v
 
 # Solo tests de mejoras del dataset (26 tests, 6 clases)
@@ -198,13 +198,13 @@ Los tests no requieren conexión a base de datos. Importan directamente las func
 ## Estado actual del desarrollo
 
 - **Algoritmo funcional**: las 5 fases del pipeline implementadas y probadas
-- **121 tests unitarios** organizados en 25 clases de test, todos pasando
+- **126 tests unitarios** organizados en 26 clases de test, todos pasando
 - **Dos modos de balanceo**: estricto (todas las clases al mínimo) e independiente (cada clase usa su máximo)
 - **Split train/val/test**: separación estratificada por clase y proyecto antes del balanceo para evitar data leakage
 - **Data augmentation adaptativo**: calcula factor variable por clase (las clases pequeñas reciben más augmentation). Solo se aplica al split de train
 - **Class weights**: calcula pesos para `CrossEntropyLoss` compensando el desbalance residual
 - **Muestreo aleatorio**: usa `random.sample()` en vez de selección secuencial para evitar sesgo hacia imágenes pequeñas
-- **SQL seguro**: queries parametrizadas con `%s` de psycopg2
+- **SQL seguro**: queries parametrizadas con `%s` de psycopg2 y UPDATEs batch (`WHERE id = ANY(%s)`) para minimizar roundtrips a BD
 - **Código modular**: funciones puras separadas de acceso a BD, importables y testeables individualmente
 - **Reproducibilidad**: `random.seed(42)` garantiza resultados idénticos entre ejecuciones
 
@@ -238,6 +238,7 @@ Los tests no requieren conexión a base de datos. Importan directamente las func
 | `TestSimulacionClassWeights` | 5 | Validación de class weights |
 | `TestSimulacionTrainValTest` | 5 | Simulación split train/val/test |
 | `TestSimulacionAugmentationEntrenamiento` | 6 | Augmentation con entrenamiento simulado |
+| `TestBatchUpdatePreparacion` | 5 | Preparación de IDs para UPDATE batch en BD |
 | `TestComparativaEstrictoVsIndependiente` | 11 | Comparativa entre ambos modos |
 | `TestSesgoSeleccion` | 5 | Validación de sesgo por muestreo secuencial |
 | `TestAugmentationUniforme` | 4 | Identifica problemas del augmentation uniforme |

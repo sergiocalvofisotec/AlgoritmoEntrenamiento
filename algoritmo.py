@@ -405,14 +405,16 @@ def obtener_imagenes_clase(conexion, clase, proyectos, criterio_tamanio, tamanio
     return conexion.fetchall()
 
 
-def actualizar_tamanio_bd(conexion, imagen_id, nombre_grupo):
-    """Actualiza el tamaño de una imagen en BD con query parametrizada."""
+def actualizar_tamanio_bd_batch(conexion, ids, nombre_grupo):
+    """Actualiza el tamaño de múltiples imágenes en una sola query."""
+    if not ids:
+        return
     consulta = """
         UPDATE public.seniales_verticales
         SET tamaño = %s
-        WHERE id = %s
+        WHERE id = ANY(%s)
     """
-    conexion.execute(consulta, (nombre_grupo, imagen_id))
+    conexion.execute(consulta, (nombre_grupo, ids))
 
 
 # ============================================================
@@ -508,10 +510,10 @@ def procesar_clases(conexion, datos_clases, objetivo_por_clase, config):
                     f"{', '.join(f'{p}={c}' for p, c in cuotas_por_grupo[i].items())}"
                 )
 
-        # Actualizar tamaño en BD
+        # Actualizar tamaño en BD (batch: una query por grupo)
         for i, nombre in enumerate(NOMBRES_GRUPOS):
-            for imagen in seleccionados[i]:
-                actualizar_tamanio_bd(conexion, imagen['id'], nombre)
+            ids = [imagen['id'] for imagen in seleccionados[i]]
+            actualizar_tamanio_bd_batch(conexion, ids, nombre)
 
         total_balanceado = sum(len(g) for g in seleccionados)
         logger.info(f"  Total tras balanceo: {total_balanceado}")
