@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagrama de Flujo - Algoritmo de Balanceo</title>
+    <title>Diagrama de Flujo - Pipeline YOLO</title>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
     <style>
         body {
@@ -59,7 +59,7 @@
 </head>
 <body>
 
-<h1>Algoritmo de Balanceo de Datasets</h1>
+<h1>Pipeline de Preparacion de Dataset YOLO</h1>
 <h2>algoritmo.py &mdash; Diagrama de Flujo</h2>
 
 <div class="legend">
@@ -82,124 +82,106 @@ flowchart TD
     classDef salida fill:#2e86ab,stroke:#81d4fa,color:#fff
     classDef fase fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
 
-    START([main - Inicio del algoritmo]):::inicio
+    START([main - Inicio del pipeline YOLO]):::inicio
 
     %% ---- CONFIGURACION ----
-    CONFIG[/"Cargar CONFIG<br/>tipo_clasificacion, criterio_tamanio,<br/>proyectos, clases_excluidas,<br/>cantidad_min/max, tamanio_maximo,<br/>balanceo_independiente,<br/>augmentation_objetivo/factor_max"/]:::config
+    CONFIG[/"Cargar CONFIG<br/>proyectos, clases_excluidas,<br/>cantidad_min=100, cantidad_max=2000,<br/>tamanio_min=10, tamanio_max=500,<br/>split_ratios, ruta_salida"/]:::config
 
     START --> CONFIG
 
     %% ---- CONEXION BD ----
     CONN[("conectarBaseDatos()<br/>PostgreSQL + RealDictCursor")]:::bd
-    COL["crear_columna_tamanio()<br/>ALTER TABLE ADD COLUMN<br/>IF NOT EXISTS"]:::bd
 
-    CONFIG --> CONN --> COL
+    CONFIG --> CONN
 
     %% ---- FASE 1 ----
-    subgraph F1 [" FASE 1: Recopilar datos - recopilar_datos()"]
+    subgraph F1 [" FASE 1: Recopilar datos + filtro de calidad"]
         direction TB
         GET_CLASES["obtener_clases()<br/>SELECT clase FROM seniales_verticales<br/>WHERE proyecto IN (...)"]:::bd
         LOOP_CLS["Para cada clase"]:::logica
         EXCL{{"clase en<br/>clases_excluidas?"}}:::decision
-        GET_IMGS["obtener_imagenes_clase()<br/>SELECT id, width, height, proyecto<br/>WHERE clase = %s AND medida &lt;= max"]:::bd
-        CHECK_MIN{{"total &lt;<br/>cantidad_minima?"}}:::decision
+        GET_IMGS["obtener_imagenes_clase()<br/>SELECT id, nombre_imagen, width, height,<br/>x_center, y_center, W_imagen, H_imagen<br/>WHERE width >= 10 AND height >= 10<br/>AND height <= 500"]:::bd
+        CHECK_MIN{{"total <<br/>cantidad_minima<br/>(100)?"}}:::decision
         SAVE["Guardar en datos_clases"]:::logica
 
         GET_CLASES --> LOOP_CLS --> EXCL
         EXCL -- "Si" --> SKIP1["Saltar clase"]:::logica
         EXCL -- "No" --> GET_IMGS --> CHECK_MIN
-        CHECK_MIN -- "Si" --> SKIP2["Saltar clase"]:::logica
+        CHECK_MIN -- "Si" --> SKIP2["Excluir clase<br/>(registrar en excluidas)"]:::logica
         CHECK_MIN -- "No" --> SAVE
         SKIP1 --> LOOP_CLS
         SKIP2 --> LOOP_CLS
         SAVE --> LOOP_CLS
     end
 
-    COL --> F1
+    CONN --> F1
 
     VALID{{"datos_clases<br/>vacio?"}}:::decision
     F1 --> VALID
     VALID -- "Si" --> FIN_EMPTY(["Fin - Sin clases validas"]):::inicio
 
     %% ---- FASE 2 ----
-    subgraph F2 [" FASE 2: Calcular objetivo - calcular_objetivo()"]
+    subgraph F2 [" FASE 2: Separar train/val/test - separar_train_val_test()"]
         direction TB
-        BAL_MODE{{"balanceo<br/>independiente?"}}:::decision
-        ESTRICTO["Objetivo unico =<br/>min(cantidad_max, clase_mas_pequena)<br/>Mismo limite para TODAS"]:::logica
-        INDEP["Objetivo por clase =<br/>min(cantidad_max, len imgs clase)<br/>Cada clase usa SU maximo"]:::logica
+        UNIQUE["Recopilar imagenes unicas<br/>por nombre_imagen y proyecto"]:::logica
+        SPLIT_IMG["Asignar cada imagen a UN split<br/>estratificado por proyecto<br/>70% train / 15% val / 15% test"]:::logica
+        DIST_ANOT["Distribuir anotaciones<br/>segun el split de su imagen<br/>(evita data leakage multiclase)"]:::logica
+        SPLIT_INFO["Registrar split_info<br/>por clase: total, train, val, test"]:::logica
 
-        BAL_MODE -- "False" --> ESTRICTO
-        BAL_MODE -- "True" --> INDEP
+        UNIQUE --> SPLIT_IMG --> DIST_ANOT --> SPLIT_INFO
     end
 
     VALID -- "No" --> F2
 
-    %% ---- FASES 3-4 ----
-    subgraph F34 [" FASES 3-4: Clasificar, balancear y actualizar - procesar_clases()"]
+    %% ---- FASE 3 ----
+    subgraph F3 [" FASE 3: Balancear por clase y proyecto (solo train)"]
         direction TB
-        LOOP2["Para cada clase en datos_clases"]:::logica
+        CALC_OBJ["calcular_objetivo()<br/>Cada clase: min(cantidad_max, len imgs)"]:::logica
+        LOOP2["Para cada clase en train"]:::logica
+        BAL_PROY["balancear_por_proyecto()<br/>Reparte cuota entre proyectos<br/>Redistribuye excedentes<br/>random.sample() para muestreo"]:::logica
+        RESUMEN["Construir resumen:<br/>clase, total, total_balanceado,<br/>seleccion, cuotas_proyecto"]:::logica
 
-        TIPO_CLAS{{"tipo_clasificacion?"}}:::decision
-        RANGO["clasificar_por_rango()<br/>4 grupos por intervalos<br/>iguales de medida"]:::logica
-        PROP["clasificar_proporcional()<br/>4 grupos con igual<br/>cantidad de imagenes"]:::logica
-
-        CUOTAS["calcular_cuotas_grupos()<br/>Reparte objetivo entre 4 grupos<br/>Redistribuye excedentes"]:::logica
-
-        LOOP_GRP["Para cada grupo: muy_pequeno,<br/>pequeno, medio, grande"]:::logica
-        BAL_PROY["balancear_por_proyecto()<br/>Reparte cuota entre proyectos<br/>Redistribuye si uno no tiene suficientes"]:::logica
-
-        UPDATE["actualizar_tamanio_bd_batch()<br/>UPDATE seniales_verticales<br/>SET tamanio = %s WHERE id = ANY(%s)<br/>1 query por grupo en vez de 1 por imagen"]:::bd
-
-        RESUMEN["Construir resumen:<br/>clase, total, total_balanceado,<br/>grupos, grupo_minimo"]:::logica
-
-        LOOP2 --> TIPO_CLAS
-        TIPO_CLAS -- "rango" --> RANGO --> CUOTAS
-        TIPO_CLAS -- "proporcional" --> PROP --> CUOTAS
-        CUOTAS --> LOOP_GRP --> BAL_PROY --> UPDATE
-        UPDATE --> LOOP_GRP
-        LOOP_GRP -. "fin grupos" .-> RESUMEN --> LOOP2
+        CALC_OBJ --> LOOP2 --> BAL_PROY --> RESUMEN --> LOOP2
     end
 
-    F2 --> F34
+    F2 --> F3
 
-    %% ---- AUGMENTATION ----
-    subgraph F_AUG [" Calcular Augmentation - calcular_augmentation()"]
+    %% ---- FASE 4 ----
+    subgraph F4 [" FASE 4: Exportar a formato YOLO - exportar_dataset_yolo()"]
         direction TB
-        LOOP_AUG["Para cada clase del resumen"]:::logica
-        CALC_FACTOR["factor = ceil(objetivo / originales)<br/>Limitado a factor_max<br/>Clases pequenas: factor alto<br/>Clases grandes: factor 1"]:::logica
-        AUG_INFO["Generar plan:<br/>imagenes_objetivo = originales x factor<br/>a_generar = originales x (factor - 1)<br/>Desglose por grupo"]:::logica
+        MKDIR["Crear estructura<br/>dataset_yolo/images/{train,val,test}<br/>dataset_yolo/labels/{train,val,test}"]:::salida
+        GROUP_ANOT["Agrupar anotaciones por imagen<br/>(multiples seniales por foto)"]:::logica
+        GEN_LABELS["Generar labels .txt<br/>clase_id x_center y_center w h<br/>(normalizado 0-1)"]:::salida
+        COPY_IMGS["Copiar imagenes<br/>(si ruta_imagenes configurada)"]:::salida
+        GEN_YAML["Generar seniales.yaml<br/>path, train, val, test, nc, names"]:::salida
 
-        LOOP_AUG --> CALC_FACTOR --> AUG_INFO --> LOOP_AUG
+        MKDIR --> GROUP_ANOT --> GEN_LABELS --> COPY_IMGS --> GEN_YAML
     end
 
-    F34 --> F_AUG
-
-    %% ---- CLASS WEIGHTS ----
-    subgraph F_CW [" Calcular Class Weights - calcular_class_weights()"]
-        direction TB
-        CW_CALC["weight_clase = total_muestras /<br/>(n_clases x muestras_clase)<br/>Para CrossEntropyLoss"]:::logica
-    end
-
-    F_AUG --> F_CW
+    F3 --> F4
 
     %% ---- FASE 5 ----
-    subgraph F5 [" FASE 5: Generar resultados - generar_fichero_resultados()"]
+    subgraph F5 [" FASE 5: Registrar version - registrar_version()"]
         direction TB
-        FILE["Escribir fichero .txt:<br/>1. Resumen por clase y grupo<br/>2. Plan de augmentation adaptativo<br/>3. Class weights para entrenamiento<br/>4. Transformaciones recomendadas"]:::salida
+        VERSION["Guardar version_TIMESTAMP.json<br/>config, clases_activas,<br/>clases_excluidas, split_info,<br/>asignacion_train (IDs por clase),<br/>estadisticas_export"]:::salida
     end
 
-    F_CW --> F5
+    F4 --> F5
 
-    FIN(["Fin - return resumen,<br/>augmentation_info, class_weights"]):::inicio
+    %% ---- RESULTADOS ----
+    RESULTADOS["generar_fichero_resultados()<br/>Escribir resultados_yolo.txt"]:::salida
 
-    F5 --> FIN
+    F5 --> RESULTADOS
+
+    FIN(["Fin - return resumen_train,<br/>clases_ordenadas, estadisticas"]):::inicio
+
+    RESULTADOS --> FIN
 
     %% ---- Estilos subgraph ----
     style F1 fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
     style F2 fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
-    style F34 fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
-    style F_AUG fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
-    style F_CW fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
+    style F3 fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
+    style F4 fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
     style F5 fill:none,stroke:#555,stroke-dasharray:5 5,color:#aaa
 </div>
 
