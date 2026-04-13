@@ -1,0 +1,387 @@
+RESUMEN DEL DATASET YOLO
+============================================================
+
+CONFIGURACIÓN
+----------------------------------------
+Proyectos: 03_ibiza, 01_alcaudete, 02_fuente_albilla, 04_carreteras
+Cantidad mínima por clase: 100
+Cantidad máxima por clase: 2000
+Tamaño mínimo de recorte: 10px
+Tamaño máximo de recorte: 500px
+Split: train=70% / val=15% / test=15%
+
+CLASES EXCLUIDAS POR CANTIDAD INSUFICIENTE
+----------------------------------------
+  C-R-301     :    4 imágenes (mínimo: 100)
+  P-14a       :   22 imágenes (mínimo: 100)
+  P-14b       :   14 imágenes (mínimo: 100)
+  P-15        :   16 imágenes (mínimo: 100)
+  P-15b       :   30 imágenes (mínimo: 100)
+  P-17        :   46 imágenes (mínimo: 100)
+  P-17a       :    5 imágenes (mínimo: 100)
+  P-18        :    3 imágenes (mínimo: 100)
+  P-1b        :   89 imágenes (mínimo: 100)
+  P-1c        :   50 imágenes (mínimo: 100)
+  P-22a       :   26 imágenes (mínimo: 100)
+  P-23        :   19 imágenes (mínimo: 100)
+  P-24        :   25 imágenes (mínimo: 100)
+  P-25        :   24 imágenes (mínimo: 100)
+  P-3         :   46 imágenes (mínimo: 100)
+  P-50        :    7 imágenes (mínimo: 100)
+  P-C         :    5 imágenes (mínimo: 100)
+  R-102       :    4 imágenes (mínimo: 100)
+  R-106       :    6 imágenes (mínimo: 100)
+  R-201       :   30 imágenes (mínimo: 100)
+  R-205       :   38 imágenes (mínimo: 100)
+  R-3         :    5 imágenes (mínimo: 100)
+  R-302       :   69 imágenes (mínimo: 100)
+  R-303       :   44 imágenes (mínimo: 100)
+  R-304       :   91 imágenes (mínimo: 100)
+  R-308g      :   70 imágenes (mínimo: 100)
+  R-308h      :   75 imágenes (mínimo: 100)
+  R-4         :    4 imágenes (mínimo: 100)
+  R-400c      :   45 imágenes (mínimo: 100)
+  R-401b      :   27 imágenes (mínimo: 100)
+  R-405       :    7 imágenes (mínimo: 100)
+  R-410       :    4 imágenes (mínimo: 100)
+  R-411       :   15 imágenes (mínimo: 100)
+  R-500       :   44 imágenes (mínimo: 100)
+  R-501       :    6 imágenes (mínimo: 100)
+  R-502       :   94 imágenes (mínimo: 100)
+  R-505       :    7 imágenes (mínimo: 100)
+  S-110       :    4 imágenes (mínimo: 100)
+  S-111       :   28 imágenes (mínimo: 100)
+  S-118       :    6 imágenes (mínimo: 100)
+  S-122       :    9 imágenes (mínimo: 100)
+  S-15a       :   25 imágenes (mínimo: 100)
+  S-15d       :    2 imágenes (mínimo: 100)
+  S-18        :    6 imágenes (mínimo: 100)
+  S-19        :   86 imágenes (mínimo: 100)
+  S-220       :   42 imágenes (mínimo: 100)
+  S-220a      :   13 imágenes (mínimo: 100)
+  S-245       :    3 imágenes (mínimo: 100)
+  S-25        :   26 imágenes (mínimo: 100)
+  S-261       :   16 imágenes (mínimo: 100)
+  S-344       :    3 imágenes (mínimo: 100)
+  S-348a      :   83 imágenes (mínimo: 100)
+  S-350       :   22 imágenes (mínimo: 100)
+  S-400       :   18 imágenes (mínimo: 100)
+  S-50b       :   14 imágenes (mínimo: 100)
+  S-510       :   36 imágenes (mínimo: 100)
+  S-520       :   23 imágenes (mínimo: 100)
+  S-52a       :    6 imágenes (mínimo: 100)
+  S-574c      :   22 imágenes (mínimo: 100)
+  S-600       :   85 imágenes (mínimo: 100)
+  S-810       :   18 imágenes (mínimo: 100)
+  S-830       :   24 imágenes (mínimo: 100)
+  S-870a      :   27 imágenes (mínimo: 100)
+  S-880a      :    7 imágenes (mínimo: 100)
+  S-891       :    5 imágenes (mínimo: 100)
+  S-991a      :   13 imágenes (mínimo: 100)
+  s-322       :    3 imágenes (mínimo: 100)
+
+Total excluidas: 67
+
+SEPARACIÓN TRAIN/VAL/TEST (pre-balanceo)
+----------------------------------------
+  Clase          Total   Train    Val   Test
+  ------------  ------  ------  -----  -----
+  BCV              619     431     92     96
+  P-1              216     149     31     36
+  P-13a            104      72     13     19
+  P-13b            114      78     16     20
+  P-15a           1071     747    160    164
+  P-1a             144     100     20     24
+  P-20b            144      99     20     25
+  P-21a            102      69     15     18
+  P-4              343     239     50     54
+  P-9c             933     652    138    143
+  PDP              660     460     97    103
+  R-1             1607    1123    238    246
+  R-100            109      75     15     19
+  R-101           1391     971    207    213
+  R-2              593     413     87     93
+  R-301           1872    1308    279    285
+  R-305            500     348     74     78
+  R-308            669     467     98    104
+  R-308c           171     118     25     28
+  R-308d           191     132     28     31
+  R-308e          1473    1029    219    225
+  R-308f           390     271     57     62
+  R-400a           217     150     31     36
+  R-400b           175     122     25     28
+  R-401a           429     299     63     67
+  R-402            693     484    102    107
+  S-105a           313     217     46     50
+  S-11             138      96     20     22
+  S-13            1442    1007    215    220
+  S-17a            149     103     21     25
+  S-200            314     219     45     50
+  S-300            452     314     65     73
+  S-572            154     106     22     26
+  S-800            107      73     14     20
+  ------------  ------  ------  -----  -----
+  TOTAL          17999   12541   2648   2810
+
+BALANCEO POR PROYECTO (train)
+============================================================
+
+Clase: BCV  (431 -> 431 imágenes)
+----------------------------------------
+  01_alcaudete        :  184 imágenes
+  03_ibiza            :   60 imágenes
+  04_carreteras       :  187 imágenes
+
+Clase: P-1  (149 -> 149 imágenes)
+----------------------------------------
+  01_alcaudete        :    4 imágenes
+  02_fuente_albilla   :  105 imágenes
+  03_ibiza            :   34 imágenes
+  04_carreteras       :    6 imágenes
+
+Clase: P-13a  (72 -> 72 imágenes)
+----------------------------------------
+  01_alcaudete        :   42 imágenes
+  02_fuente_albilla   :    9 imágenes
+  03_ibiza            :   12 imágenes
+  04_carreteras       :    9 imágenes
+
+Clase: P-13b  (78 -> 78 imágenes)
+----------------------------------------
+  01_alcaudete        :   28 imágenes
+  03_ibiza            :   22 imágenes
+  04_carreteras       :   28 imágenes
+
+Clase: P-15a  (747 -> 747 imágenes)
+----------------------------------------
+  01_alcaudete        :  709 imágenes
+  02_fuente_albilla   :   29 imágenes
+  03_ibiza            :    5 imágenes
+  04_carreteras       :    4 imágenes
+
+Clase: P-1a  (100 -> 100 imágenes)
+----------------------------------------
+  01_alcaudete        :   12 imágenes
+  03_ibiza            :   44 imágenes
+  04_carreteras       :   44 imágenes
+
+Clase: P-20b  (99 -> 99 imágenes)
+----------------------------------------
+  01_alcaudete        :    5 imágenes
+  02_fuente_albilla   :   53 imágenes
+  03_ibiza            :   41 imágenes
+
+Clase: P-21a  (69 -> 69 imágenes)
+----------------------------------------
+  01_alcaudete        :   28 imágenes
+  02_fuente_albilla   :   18 imágenes
+  03_ibiza            :   23 imágenes
+
+Clase: P-4  (239 -> 239 imágenes)
+----------------------------------------
+  01_alcaudete        :  112 imágenes
+  03_ibiza            :   67 imágenes
+  04_carreteras       :   60 imágenes
+
+Clase: P-9c  (652 -> 652 imágenes)
+----------------------------------------
+  01_alcaudete        :  280 imágenes
+  02_fuente_albilla   :   49 imágenes
+  03_ibiza            :   81 imágenes
+  04_carreteras       :  242 imágenes
+
+Clase: PDP  (460 -> 460 imágenes)
+----------------------------------------
+  01_alcaudete        :   92 imágenes
+  02_fuente_albilla   :   21 imágenes
+  03_ibiza            :  237 imágenes
+  04_carreteras       :  110 imágenes
+
+Clase: R-1  (1123 -> 1123 imágenes)
+----------------------------------------
+  01_alcaudete        :  208 imágenes
+  02_fuente_albilla   :  587 imágenes
+  03_ibiza            :  176 imágenes
+  04_carreteras       :  152 imágenes
+
+Clase: R-100  (75 -> 75 imágenes)
+----------------------------------------
+  01_alcaudete        :    3 imágenes
+  02_fuente_albilla   :   71 imágenes
+  03_ibiza            :    1 imágenes
+
+Clase: R-101  (971 -> 971 imágenes)
+----------------------------------------
+  01_alcaudete        :  625 imágenes
+  02_fuente_albilla   :  125 imágenes
+  03_ibiza            :  158 imágenes
+  04_carreteras       :   63 imágenes
+
+Clase: R-2  (413 -> 413 imágenes)
+----------------------------------------
+  01_alcaudete        :  151 imágenes
+  02_fuente_albilla   :  204 imágenes
+  03_ibiza            :    7 imágenes
+  04_carreteras       :   51 imágenes
+
+Clase: R-301  (1308 -> 1308 imágenes)
+----------------------------------------
+  01_alcaudete        :  607 imágenes
+  02_fuente_albilla   :  172 imágenes
+  03_ibiza            :  250 imágenes
+  04_carreteras       :  279 imágenes
+
+Clase: R-305  (348 -> 348 imágenes)
+----------------------------------------
+  01_alcaudete        :   94 imágenes
+  02_fuente_albilla   :   14 imágenes
+  03_ibiza            :  131 imágenes
+  04_carreteras       :  109 imágenes
+
+Clase: R-308  (467 -> 467 imágenes)
+----------------------------------------
+  01_alcaudete        :  166 imágenes
+  02_fuente_albilla   :  255 imágenes
+  03_ibiza            :   46 imágenes
+
+Clase: R-308c  (118 -> 118 imágenes)
+----------------------------------------
+  01_alcaudete        :   93 imágenes
+  02_fuente_albilla   :   25 imágenes
+
+Clase: R-308d  (132 -> 132 imágenes)
+----------------------------------------
+  01_alcaudete        :  118 imágenes
+  02_fuente_albilla   :   14 imágenes
+
+Clase: R-308e  (1029 -> 1029 imágenes)
+----------------------------------------
+  01_alcaudete        :  762 imágenes
+  02_fuente_albilla   :  261 imágenes
+  03_ibiza            :    2 imágenes
+  04_carreteras       :    4 imágenes
+
+Clase: R-308f  (271 -> 271 imágenes)
+----------------------------------------
+  01_alcaudete        :  182 imágenes
+  02_fuente_albilla   :   60 imágenes
+  03_ibiza            :   28 imágenes
+  04_carreteras       :    1 imágenes
+
+Clase: R-400a  (150 -> 150 imágenes)
+----------------------------------------
+  01_alcaudete        :  123 imágenes
+  02_fuente_albilla   :   23 imágenes
+  03_ibiza            :    4 imágenes
+
+Clase: R-400b  (122 -> 122 imágenes)
+----------------------------------------
+  01_alcaudete        :   53 imágenes
+  02_fuente_albilla   :   69 imágenes
+
+Clase: R-401a  (299 -> 299 imágenes)
+----------------------------------------
+  01_alcaudete        :  147 imágenes
+  03_ibiza            :  118 imágenes
+  04_carreteras       :   34 imágenes
+
+Clase: R-402  (484 -> 484 imágenes)
+----------------------------------------
+  01_alcaudete        :  298 imágenes
+  03_ibiza            :  135 imágenes
+  04_carreteras       :   51 imágenes
+
+Clase: S-105a  (217 -> 217 imágenes)
+----------------------------------------
+  01_alcaudete        :  154 imágenes
+  02_fuente_albilla   :   42 imágenes
+  03_ibiza            :   17 imágenes
+  04_carreteras       :    4 imágenes
+
+Clase: S-11  (96 -> 96 imágenes)
+----------------------------------------
+  01_alcaudete        :   90 imágenes
+  04_carreteras       :    6 imágenes
+
+Clase: S-13  (1007 -> 1007 imágenes)
+----------------------------------------
+  01_alcaudete        :  583 imágenes
+  02_fuente_albilla   :  262 imágenes
+  03_ibiza            :  118 imágenes
+  04_carreteras       :   44 imágenes
+
+Clase: S-17a  (103 -> 103 imágenes)
+----------------------------------------
+  01_alcaudete        :   73 imágenes
+  03_ibiza            :   30 imágenes
+
+Clase: S-200  (219 -> 219 imágenes)
+----------------------------------------
+  01_alcaudete        :   49 imágenes
+  03_ibiza            :  129 imágenes
+  04_carreteras       :   41 imágenes
+
+Clase: S-300  (314 -> 314 imágenes)
+----------------------------------------
+  01_alcaudete        :  100 imágenes
+  02_fuente_albilla   :  110 imágenes
+  03_ibiza            :   11 imágenes
+  04_carreteras       :   93 imágenes
+
+Clase: S-572  (106 -> 106 imágenes)
+----------------------------------------
+  01_alcaudete        :   31 imágenes
+  02_fuente_albilla   :   14 imágenes
+  03_ibiza            :   18 imágenes
+  04_carreteras       :   43 imágenes
+
+Clase: S-800  (73 -> 73 imágenes)
+----------------------------------------
+  01_alcaudete        :   30 imágenes
+  02_fuente_albilla   :   11 imágenes
+  03_ibiza            :    6 imágenes
+  04_carreteras       :   26 imágenes
+
+============================================================
+EXPORTACIÓN YOLO
+----------------------------------------
+Clases activas: 34
+Imágenes train: 9281
+Imágenes val:   2461
+Imágenes test:  2629
+
+Mapeo de clases (ID -> nombre):
+    0: BCV
+    1: P-1
+    2: P-13a
+    3: P-13b
+    4: P-15a
+    5: P-1a
+    6: P-20b
+    7: P-21a
+    8: P-4
+    9: P-9c
+   10: PDP
+   11: R-1
+   12: R-100
+   13: R-101
+   14: R-2
+   15: R-301
+   16: R-305
+   17: R-308
+   18: R-308c
+   19: R-308d
+   20: R-308e
+   21: R-308f
+   22: R-400a
+   23: R-400b
+   24: R-401a
+   25: R-402
+   26: S-105a
+   27: S-11
+   28: S-13
+   29: S-17a
+   30: S-200
+   31: S-300
+   32: S-572
+   33: S-800
